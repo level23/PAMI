@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Originate action message.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Action;
 
 /**
@@ -47,10 +49,8 @@ class OriginateAction extends ActionMessage
      * Sets Exten key.
      *
      * @param string $extension Extension to use (requires Context and Priority).
-     *
-     * @return void
      */
-    public function setExtension($extension)
+    public function setExtension(string|int|bool $extension): void
     {
         $this->setKey('Exten', $extension);
     }
@@ -59,10 +59,8 @@ class OriginateAction extends ActionMessage
      * Sets Context key.
      *
      * @param string $context Context to use (requires Exten and Priority).
-     *
-     * @return void
      */
-    public function setContext($context)
+    public function setContext(string|int|bool $context): void
     {
         $this->setKey('Context', $context);
     }
@@ -71,10 +69,8 @@ class OriginateAction extends ActionMessage
      * Sets Priority key.
      *
      * @param string $priority Priority to use (requires Exten and Context).
-     *
-     * @return void
      */
-    public function setPriority($priority)
+    public function setPriority(string|int|bool $priority): void
     {
         $this->setKey('Priority', $priority);
     }
@@ -83,10 +79,8 @@ class OriginateAction extends ActionMessage
      * Sets Application key.
      *
      * @param string $application Application to execute.
-     *
-     * @return void
      */
-    public function setApplication($application)
+    public function setApplication(string|int|bool $application): void
     {
         $this->setKey('Application', $application);
     }
@@ -95,10 +89,8 @@ class OriginateAction extends ActionMessage
      * Sets Data key.
      *
      * @param string $data Data to use (requires Application).
-     *
-     * @return void
      */
-    public function setData($data)
+    public function setData(string|int|bool $data): void
     {
         $this->setKey('Data', $data);
     }
@@ -107,10 +99,8 @@ class OriginateAction extends ActionMessage
      * Sets Timeout key.
      *
      * @param integer|string $timeout How long to wait for call to be answered (in ms).
-     *
-     * @return void
      */
-    public function setTimeout($timeout)
+    public function setTimeout(string|int|bool $timeout): void
     {
         $this->setKey('Timeout', $timeout);
     }
@@ -119,10 +109,8 @@ class OriginateAction extends ActionMessage
      * Sets CallerID key.
      *
      * @param string $clid Caller ID to be set on the outgoing channel.
-     *
-     * @return void
      */
-    public function setCallerId($clid)
+    public function setCallerId(string|int|bool $clid): void
     {
         $this->setKey('CallerID', $clid);
     }
@@ -131,10 +119,8 @@ class OriginateAction extends ActionMessage
      * Sets Account key.
      *
      * @param string $account Account code.
-     *
-     * @return void
      */
-    public function setAccount($account)
+    public function setAccount(string|int|bool $account): void
     {
         $this->setKey('Account', $account);
     }
@@ -143,10 +129,8 @@ class OriginateAction extends ActionMessage
      * Sets Async key.
      *
      * @param bool $async Set to true for fast origination.
-     *
-     * @return void
      */
-    public function setAsync($async)
+    public function setAsync($async): void
     {
         $this->setKey('Async', $async ? 'true' : 'false');
     }
@@ -155,10 +139,8 @@ class OriginateAction extends ActionMessage
      * Sets Codecs key.
      *
      * @param string[] $codecs List of codecs to use for this call.
-     *
-     * @return void
      */
-    public function setCodecs(array $codecs)
+    public function setCodecs(array $codecs): void
     {
         $this->setKey('Codecs', implode(',', $codecs));
     }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when a channel changes its status.
  *
@@ -29,6 +30,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -52,7 +54,7 @@ class NewstateEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -62,7 +64,7 @@ class NewstateEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannel()
+    public function getChannel(): string|int|bool|null
     {
         return $this->getKey('Channel');
     }
@@ -72,7 +74,7 @@ class NewstateEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannelState()
+    public function getChannelState(): string|int|bool|null
     {
         return $this->getKey('ChannelState');
     }
@@ -82,7 +84,7 @@ class NewstateEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannelStateDesc()
+    public function getChannelStateDesc(): string|int|bool|null
     {
         return $this->getKey('ChannelStateDesc');
     }
@@ -92,7 +94,7 @@ class NewstateEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerIDNum()
+    public function getCallerIDNum(): string|int|bool|null
     {
         return $this->getKey('CallerIDNum');
     }
@@ -102,7 +104,7 @@ class NewstateEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerIDName()
+    public function getCallerIDName(): string|int|bool|null
     {
         return $this->getKey('CallerIDName');
     }
@@ -112,17 +114,17 @@ class NewstateEvent extends EventMessage
      *
      * @return string
      */
-    public function getUniqueID()
+    public function getUniqueID(): string|int|bool|null
     {
         return $this->getKey('UniqueID');
     }
 
-   /**
-     * Returns key: 'ConnectedLineNum'. Asterisk >= 1.8.
-     *
-     * @return string
-     */
-    public function getConnectedLineNum()
+    /**
+      * Returns key: 'ConnectedLineNum'. Asterisk >= 1.8.
+      *
+      * @return string
+      */
+    public function getConnectedLineNum(): string|int|bool|null
     {
         return $this->getKey('ConnectedLineNum');
     }
@@ -132,7 +134,7 @@ class NewstateEvent extends EventMessage
      *
      * @return string
      */
-    public function getConnectedLineName()
+    public function getConnectedLineName(): string|int|bool|null
     {
         return $this->getKey('ConnectedLineName');
     }

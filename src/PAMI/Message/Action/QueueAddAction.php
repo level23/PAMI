@@ -1,4 +1,5 @@
 <?php
+
 /**
  * QueueAdd action message.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Action;
 
 /**
@@ -47,10 +49,8 @@ class QueueAddAction extends ActionMessage
      * Sets state interface ... ? Key: 'StateInterface'.
      *
      * @param string $stateInterface State interface ... ?
-     *
-     * @return void
      */
-    public function setStateInterface($stateInterface)
+    public function setStateInterface(string|int|bool $stateInterface): void
     {
         $this->setKey('StateInterface', $stateInterface);
     }
@@ -59,10 +59,8 @@ class QueueAddAction extends ActionMessage
      * Sets penalty. Key: 'Penalty'.
      *
      * @param string $penalty Penalty .. ?
-     *
-     * @return void
      */
-    public function setPenalty($penalty)
+    public function setPenalty(string|int|bool $penalty): void
     {
         $this->setKey('Penalty', $penalty);
     }
@@ -71,10 +69,8 @@ class QueueAddAction extends ActionMessage
      * Sets member name. Key: 'MemberName'.
      *
      * @param string $memberName Member name ?
-     *
-     * @return void
      */
-    public function setMemberName($memberName)
+    public function setMemberName(string|int|bool $memberName): void
     {
         $this->setKey('MemberName', $memberName);
     }
@@ -84,10 +80,8 @@ class QueueAddAction extends ActionMessage
      * Sets paused. Key: 'Paused'.
      *
      * @param string $paused Paused .. ?
-     *
-     * @return void
      */
-    public function setPaused($paused)
+    public function setPaused(string|int|bool $paused): void
     {
         $this->setKey('Paused', $paused);
     }

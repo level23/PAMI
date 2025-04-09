@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered for a QueueStatus action.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 /**
@@ -48,17 +50,15 @@ class QueueParamsEvent extends EventMessage
      *
      * @return string
      */
-    public function getQueue()
+    public function getQueue(): string|int|bool|null
     {
         return $this->getKey('Queue');
     }
 
     /**
      * Returns key: 'Max'.
-     *
-     * @return integer
      */
-    public function getMax()
+    public function getMax(): int
     {
         return intval($this->getKey('Max'));
     }
@@ -68,57 +68,47 @@ class QueueParamsEvent extends EventMessage
      *
      * @return string
      */
-    public function getStrategy()
+    public function getStrategy(): string|int|bool|null
     {
         return $this->getKey('Strategy');
     }
 
     /**
      * Returns key: 'Calls'.
-     *
-     * @return integer
      */
-    public function getCalls()
+    public function getCalls(): int
     {
         return intval($this->getKey('Calls'));
     }
 
     /**
      * Returns key: 'HoldTime'.
-     *
-     * @return integer
      */
-    public function getHoldTime()
+    public function getHoldTime(): int
     {
         return intval($this->getKey('HoldTime'));
     }
 
     /**
      * Returns key: 'Completed'.
-     *
-     * @return integer
      */
-    public function getCompleted()
+    public function getCompleted(): int
     {
         return intval($this->getKey('Completed'));
     }
 
     /**
      * Returns key: 'Abandoned'.
-     *
-     * @return integer
      */
-    public function getAbandoned()
+    public function getAbandoned(): int
     {
         return intval($this->getKey('Abandoned'));
     }
 
     /**
      * Returns key: 'ServiceLevel'.
-     *
-     * @return integer
      */
-    public function getServiceLevel()
+    public function getServiceLevel(): int
     {
         return intval($this->getKey('ServiceLevel'));
     }
@@ -128,17 +118,15 @@ class QueueParamsEvent extends EventMessage
      *
      * @return string
      */
-    public function getServiceLevelPerf()
+    public function getServiceLevelPerf(): string|int|bool|null
     {
         return $this->getKey('ServiceLevelPerf');
     }
 
     /**
      * Returns key: 'Weight'.
-     *
-     * @return integer
      */
-    public function getWeight()
+    public function getWeight(): int
     {
         return intval($this->getKey('Weight'));
     }

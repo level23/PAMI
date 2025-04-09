@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when an action CoreShowChannel is issued.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -50,7 +52,7 @@ class CoreShowChannelEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -60,7 +62,7 @@ class CoreShowChannelEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannel()
+    public function getChannel(): string|int|bool|null
     {
         return $this->getKey('Channel');
     }
@@ -70,7 +72,7 @@ class CoreShowChannelEvent extends EventMessage
      *
      * @return string
      */
-    public function getUniqueID()
+    public function getUniqueID(): string|int|bool|null
     {
         return $this->getKey('UniqueID');
     }
@@ -80,7 +82,7 @@ class CoreShowChannelEvent extends EventMessage
      *
      * @return string
      */
-    public function getContext()
+    public function getContext(): string|int|bool|null
     {
         return $this->getKey('Context');
     }
@@ -90,7 +92,7 @@ class CoreShowChannelEvent extends EventMessage
      *
      * @return string
      */
-    public function getExtension()
+    public function getExtension(): string|int|bool|null
     {
         return $this->getKey('Extension');
     }
@@ -101,7 +103,7 @@ class CoreShowChannelEvent extends EventMessage
      *
      * @return string
      */
-    public function getPriority()
+    public function getPriority(): string|int|bool|null
     {
         return $this->getKey('Priority');
     }
@@ -111,7 +113,7 @@ class CoreShowChannelEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannelState()
+    public function getChannelState(): string|int|bool|null
     {
         return $this->getKey('ChannelState');
     }
@@ -121,7 +123,7 @@ class CoreShowChannelEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannelStateDesc()
+    public function getChannelStateDesc(): string|int|bool|null
     {
         return $this->getKey('ChannelStateDesc');
     }
@@ -131,7 +133,7 @@ class CoreShowChannelEvent extends EventMessage
      *
      * @return string
      */
-    public function getApplication()
+    public function getApplication(): string|int|bool|null
     {
         return $this->getKey('Application');
     }
@@ -141,7 +143,7 @@ class CoreShowChannelEvent extends EventMessage
      *
      * @return string
      */
-    public function getApplicationData()
+    public function getApplicationData(): string|int|bool|null
     {
         return $this->getKey('ApplicationData');
     }
@@ -151,7 +153,7 @@ class CoreShowChannelEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerIDNum()
+    public function getCallerIDNum(): string|int|bool|null
     {
         return $this->getKey('CallerIDNum');
     }
@@ -161,7 +163,7 @@ class CoreShowChannelEvent extends EventMessage
      *
      * @return string
      */
-    public function getDuration()
+    public function getDuration(): string|int|bool|null
     {
         return $this->getKey('Duration');
     }
@@ -171,7 +173,7 @@ class CoreShowChannelEvent extends EventMessage
      *
      * @return string
      */
-    public function getAccountCode()
+    public function getAccountCode(): string|int|bool|null
     {
         return $this->getKey('AccountCode');
     }
@@ -181,7 +183,7 @@ class CoreShowChannelEvent extends EventMessage
      *
      * @return string
      */
-    public function getBridgedChannel()
+    public function getBridgedChannel(): string|int|bool|null
     {
         return $this->getKey('BridgedChannel');
     }
@@ -191,7 +193,7 @@ class CoreShowChannelEvent extends EventMessage
      *
      * @return string
      */
-    public function getBridgedUniqueID()
+    public function getBridgedUniqueID(): string|int|bool|null
     {
         return $this->getKey('BridgedUniqueID');
     }

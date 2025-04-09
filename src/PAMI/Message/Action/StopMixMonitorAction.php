@@ -1,4 +1,5 @@
 <?php
+
 /**
  * StopMixMonitor action message.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Action;
 
 /**
@@ -47,10 +49,8 @@ class StopMixMonitorAction extends ActionMessage
      * Sets MixMonitorID key.
      *
      * @param string $mixMonitorId MixMonitorID to use.
-     *
-     * @return void
      */
-    public function setMixMonitorId($mixMonitorId)
+    public function setMixMonitorId(string|int|bool $mixMonitorId): void
     {
         $this->setKey('MixMonitorID', $mixMonitorId);
     }

@@ -17,3 +17,5 @@ resources/php.ini
 /.idea/phpspec.xml
 /.idea/phpunit.xml
 /.idea/vcs.xml
+.php-cs-fixer.cache
+

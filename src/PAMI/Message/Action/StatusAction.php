@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Queries for the status of a channel or all channels if none specified.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Action;
 
 /**

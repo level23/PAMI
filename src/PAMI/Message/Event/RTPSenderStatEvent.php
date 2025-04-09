@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when exchanging rtp stats.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -50,7 +52,7 @@ class RTPSenderStatEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -60,7 +62,7 @@ class RTPSenderStatEvent extends EventMessage
      *
      * @return string
      */
-    public function getSSRC()
+    public function getSSRC(): string|int|bool|null
     {
         return $this->getKey('SSRC');
     }
@@ -70,7 +72,7 @@ class RTPSenderStatEvent extends EventMessage
      *
      * @return string
      */
-    public function getSentPackets()
+    public function getSentPackets(): string|int|bool|null
     {
         return $this->getKey('SentPackets');
     }
@@ -80,7 +82,7 @@ class RTPSenderStatEvent extends EventMessage
      *
      * @return string
      */
-    public function getLostPackets()
+    public function getLostPackets(): string|int|bool|null
     {
         return $this->getKey('LostPackets');
     }
@@ -90,7 +92,7 @@ class RTPSenderStatEvent extends EventMessage
      *
      * @return string
      */
-    public function getJitter()
+    public function getJitter(): string|int|bool|null
     {
         return $this->getKey('Jitter');
     }
@@ -100,7 +102,7 @@ class RTPSenderStatEvent extends EventMessage
      *
      * @return string
      */
-    public function getRTT()
+    public function getRTT(): string|int|bool|null
     {
         return $this->getKey('RTT');
     }
@@ -110,7 +112,7 @@ class RTPSenderStatEvent extends EventMessage
      *
      * @return string
      */
-    public function getSRCount()
+    public function getSRCount(): string|int|bool|null
     {
         return $this->getKey('SRCount');
     }

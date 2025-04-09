@@ -1,4 +1,5 @@
 <?php
+
 /**
  * AgentLogoff action message.
  *

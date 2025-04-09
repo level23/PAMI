@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Not all methods were implemented. For reference please check
  * http://open.voismart.it/index.php/VGSM_Manager_Interface
@@ -29,6 +30,7 @@
  *
  *
  */
+
 namespace PAMI\Message\Action;
 
 /**
@@ -50,10 +52,8 @@ class VGSMSMSTxAction extends ActionMessage
      * Sets CellPhone Number . Mandatory
      *
      * @param string $target phone to send SMS to. Sign + and Countr code is needed in some countries.
-     *
-     * @return void
      */
-    public function setTo($target)
+    public function setTo(string|int|bool $target): void
     {
         $this->setKey('To', $target);
     }
@@ -62,10 +62,8 @@ class VGSMSMSTxAction extends ActionMessage
      * Sets Content  Type. Optional
      *
      * @param string $contentType Content to use, default text/plain; charset=ASCII
-     *
-     * @return void
      */
-    public function setContentType($contentType)
+    public function setContentType(string|int|bool $contentType): void
     {
         $this->setKey('Content-type', $contentType);
     }
@@ -74,10 +72,8 @@ class VGSMSMSTxAction extends ActionMessage
      * Sets Content  Type Encoding.Optional
      *
      * @param string $encoding Content to use, default text/plain; charset=ASCII
-     *
-     * @return void
      */
-    public function setContentEncoding($encoding)
+    public function setContentEncoding(string|int|bool $encoding): void
     {
         $this->setKey('Content-Transfer-Encoding', $encoding);
     }
@@ -86,10 +82,8 @@ class VGSMSMSTxAction extends ActionMessage
      * Sets Chip Id - It will use the chip_id provided.Optional
      *
      * @param string $chipId Chip Id to use format meX , eg. me0 for VGSM 2 cards
-     *
-     * @return void
      */
-    public function setMe($chipId)
+    public function setMe(string|int|bool $chipId): void
     {
         $this->setKey('X-SMS-ME', $chipId);
     }
@@ -98,10 +92,8 @@ class VGSMSMSTxAction extends ActionMessage
      * Sets $content  - Message to send. Mandatory
      *
      * @param string $content Should be ASCII not utf8, no accents nada!.
-     *
-     * @return void
      */
-    public function setContent($content)
+    public function setContent(string|int|bool $content): void
     {
         $this->setKey('Content', $content);
     }
@@ -110,10 +102,8 @@ class VGSMSMSTxAction extends ActionMessage
      * Sets X-SMS-Class  key. Optional
      *
      * @param string $class Class of SMS to send. Values are 0, 1. 0 is Flash message.
-     *
-     * @return void
      */
-    public function setSmsClass($class)
+    public function setSmsClass(string|int|bool $class): void
     {
         $this->setKey('X-SMS-Class', $class);
     }
@@ -123,10 +113,8 @@ class VGSMSMSTxAction extends ActionMessage
      * setConcatSeqNum and setConcatSeqNum
      *
      * @param string|int $refid
-     *
-     * @return void
      */
-    public function setConcatRefId($refid)
+    public function setConcatRefId(string|int|bool $refid): void
     {
         $this->setKey('X-SMS-Concatenate-RefID', $refid);
     }
@@ -136,10 +124,8 @@ class VGSMSMSTxAction extends ActionMessage
      * setConcatSeqNum: setConcatTotalMsg
      *
      * @param string $seqnum
-     *
-     * @return void
      */
-    public function setConcatSeqNum($seqnum)
+    public function setConcatSeqNum(string|int|bool $seqnum): void
     {
         $this->setKey('X-SMS-Concatenate-Sequence-Number', $seqnum);
     }
@@ -149,10 +135,8 @@ class VGSMSMSTxAction extends ActionMessage
      * setConcatRefId and setConcatSeqNum
      *
      * @param string|int $totalmsg
-     *
-     * @return void
      */
-    public function setConcatTotalMsg($totalmsg)
+    public function setConcatTotalMsg(string|int|bool $totalmsg): void
     {
         $this->setKey('X-SMS-Concatenate-Total-Messages', $totalmsg);
     }
@@ -161,10 +145,8 @@ class VGSMSMSTxAction extends ActionMessage
      * Sets Account key.
      *
      * @param string $account Account code.
-     *
-     * @return void
      */
-    public function setAccount($account)
+    public function setAccount(string|int|bool $account): void
     {
         $this->setKey('Account', $account);
     }

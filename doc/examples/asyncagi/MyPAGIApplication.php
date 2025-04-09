@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PAGI basic use example. Please see run.sh in this same directory for an
  * example of how to actually run this from your dialplan.
@@ -45,6 +46,7 @@ use PAGI\Application\PAGIApplication;
 use PAGI\Client\ChannelStatus;
 use PAGI\CallSpool\CallFile;
 use PAGI\CallSpool\Impl\CallSpoolImpl;
+
 declare(ticks=1);
 /**
  * PAGI basic use example. Please see run.sh in this same directory for an
@@ -105,12 +107,11 @@ class MyPAGIApplication extends PAGIApplication
      */
     public function shutdown()
     {
-        try
-        {
+        try {
             $this->log('Shutdown');
             $client = $this->getAgi();
             $client->hangup();
-        } catch(\Exception $e) {
+        } catch (\Exception $e) {
 
         }
     }
@@ -291,7 +292,7 @@ class MyPAGIApplication extends PAGIApplication
     public function errorHandler($type, $message, $file, $line)
     {
         $this->log(
-        	'ErrorHandler: '
+            'ErrorHandler: '
             . implode(' ', array($type, $message, $file, $line))
         );
     }

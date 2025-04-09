@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when an extension is masqued??
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -50,7 +52,7 @@ class MasqueradeEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -60,7 +62,7 @@ class MasqueradeEvent extends EventMessage
      *
      * @return string
      */
-    public function getClone()
+    public function getClone(): string|int|bool|null
     {
         return $this->getKey('Clone');
     }
@@ -70,7 +72,7 @@ class MasqueradeEvent extends EventMessage
      *
      * @return string
      */
-    public function getCloneState()
+    public function getCloneState(): string|int|bool|null
     {
         return $this->getKey('CloneState');
     }
@@ -79,7 +81,7 @@ class MasqueradeEvent extends EventMessage
      *
      * @return string
      */
-    public function getOriginal()
+    public function getOriginal(): string|int|bool|null
     {
         return $this->getKey('Original');
     }
@@ -89,7 +91,7 @@ class MasqueradeEvent extends EventMessage
      *
      * @return string
      */
-    public function getOriginalState()
+    public function getOriginalState(): string|int|bool|null
     {
         return $this->getKey('OriginalState');
     }

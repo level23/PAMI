@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when an agent connects.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -50,7 +52,7 @@ class AgentConnectEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -60,7 +62,7 @@ class AgentConnectEvent extends EventMessage
      *
      * @return string
      */
-    public function getHoldTime()
+    public function getHoldTime(): string|int|bool|null
     {
         return $this->getKey('HoldTime');
     }
@@ -70,7 +72,7 @@ class AgentConnectEvent extends EventMessage
      *
      * @return string
      */
-    public function getBridgedChannel()
+    public function getBridgedChannel(): string|int|bool|null
     {
         return $this->getKey('BridgedChannel');
     }
@@ -80,7 +82,7 @@ class AgentConnectEvent extends EventMessage
      *
      * @return string
      */
-    public function getRingTime()
+    public function getRingTime(): string|int|bool|null
     {
         return $this->getKey('RingTime');
     }
@@ -90,7 +92,7 @@ class AgentConnectEvent extends EventMessage
      *
      * @return string
      */
-    public function getMember()
+    public function getMember(): string|int|bool|null
     {
         return $this->getKey('Member');
     }
@@ -100,7 +102,7 @@ class AgentConnectEvent extends EventMessage
      *
      * @return string
      */
-    public function getMemberName()
+    public function getMemberName(): string|int|bool|null
     {
         return $this->getKey('MemberName');
     }
@@ -110,7 +112,7 @@ class AgentConnectEvent extends EventMessage
      *
      * @return string
      */
-    public function getQueue()
+    public function getQueue(): string|int|bool|null
     {
         return $this->getKey('Queue');
     }
@@ -120,7 +122,7 @@ class AgentConnectEvent extends EventMessage
      *
      * @return string
      */
-    public function getUniqueID()
+    public function getUniqueID(): string|int|bool|null
     {
         return $this->getKey('UniqueID');
     }
@@ -130,7 +132,7 @@ class AgentConnectEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannel()
+    public function getChannel(): string|int|bool|null
     {
         return $this->getKey('Channel');
     }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when bridging (connecting) two channels.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -50,7 +52,7 @@ class BridgeEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -60,7 +62,7 @@ class BridgeEvent extends EventMessage
      *
      * @return string
      */
-    public function getBridgeState()
+    public function getBridgeState(): string|int|bool|null
     {
         return $this->getKey('Bridgestate');
     }
@@ -70,7 +72,7 @@ class BridgeEvent extends EventMessage
      *
      * @return string
      */
-    public function getBridgeType()
+    public function getBridgeType(): string|int|bool|null
     {
         return $this->getKey('Bridgetype');
     }
@@ -80,7 +82,7 @@ class BridgeEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannel1()
+    public function getChannel1(): string|int|bool|null
     {
         return $this->getKey('Channel1');
     }
@@ -90,7 +92,7 @@ class BridgeEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannel2()
+    public function getChannel2(): string|int|bool|null
     {
         return $this->getKey('Channel2');
     }
@@ -100,7 +102,7 @@ class BridgeEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerID1()
+    public function getCallerID1(): string|int|bool|null
     {
         return $this->getKey('CallerID1');
     }
@@ -110,7 +112,7 @@ class BridgeEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerID2()
+    public function getCallerID2(): string|int|bool|null
     {
         return $this->getKey('CallerID2');
     }
@@ -120,7 +122,7 @@ class BridgeEvent extends EventMessage
      *
      * @return string
      */
-    public function getUniqueID1()
+    public function getUniqueID1(): string|int|bool|null
     {
         return $this->getKey('UniqueID1');
     }
@@ -130,7 +132,7 @@ class BridgeEvent extends EventMessage
      *
      * @return string
      */
-    public function getUniqueID2()
+    public function getUniqueID2(): string|int|bool|null
     {
         return $this->getKey('UniqueID2');
     }

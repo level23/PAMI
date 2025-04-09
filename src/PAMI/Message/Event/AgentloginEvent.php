@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when an agent logs in.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -50,7 +52,7 @@ class AgentloginEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -60,7 +62,7 @@ class AgentloginEvent extends EventMessage
      *
      * @return string
      */
-    public function getAgent()
+    public function getAgent(): string|int|bool|null
     {
         return $this->getKey('Agent');
     }
@@ -70,7 +72,7 @@ class AgentloginEvent extends EventMessage
      *
      * @return string
      */
-    public function getUniqueID()
+    public function getUniqueID(): string|int|bool|null
     {
         return $this->getKey('UniqueID');
     }
@@ -80,7 +82,7 @@ class AgentloginEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannel()
+    public function getChannel(): string|int|bool|null
     {
         return $this->getKey('Channel');
     }

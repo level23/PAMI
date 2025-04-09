@@ -7,7 +7,7 @@ use PAMI\Message\Event\EventMessage;
 
 class SomeListenerClass implements IEventListener
 {
-    public static ?EventMessage $event;
+    public static ?EventMessage $event = null;
 
     public function handle(EventMessage $event): void
     {

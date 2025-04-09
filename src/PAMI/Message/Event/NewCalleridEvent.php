@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when a caller id is used.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -50,7 +52,7 @@ class NewCalleridEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -60,7 +62,7 @@ class NewCalleridEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannel()
+    public function getChannel(): string|int|bool|null
     {
         return $this->getKey('Channel');
     }
@@ -70,7 +72,7 @@ class NewCalleridEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerIDNum()
+    public function getCallerIDNum(): string|int|bool|null
     {
         return $this->getKey('CallerIDNum');
     }
@@ -80,7 +82,7 @@ class NewCalleridEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerIDName()
+    public function getCallerIDName(): string|int|bool|null
     {
         return $this->getKey('CallerIDName');
     }
@@ -90,7 +92,7 @@ class NewCalleridEvent extends EventMessage
      *
      * @return string
      */
-    public function getUniqueID()
+    public function getUniqueID(): string|int|bool|null
     {
         return $this->getKey('UniqueID');
     }
@@ -100,7 +102,7 @@ class NewCalleridEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerIdPres()
+    public function getCallerIdPres(): string|int|bool|null
     {
         return $this->getKey('CID-CallingPres');
     }

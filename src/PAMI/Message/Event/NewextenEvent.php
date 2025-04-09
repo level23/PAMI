@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when a new extension is accessed.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 /**
@@ -48,7 +50,7 @@ class NewextenEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -58,7 +60,7 @@ class NewextenEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannel()
+    public function getChannel(): string|int|bool|null
     {
         return $this->getKey('Channel');
     }
@@ -69,7 +71,7 @@ class NewextenEvent extends EventMessage
      *
      * @return string
      */
-    public function getExtension()
+    public function getExtension(): string|int|bool|null
     {
         return $this->getKey('Extension');
     }
@@ -79,7 +81,7 @@ class NewextenEvent extends EventMessage
      *
      * @return string
      */
-    public function getExten()
+    public function getExten(): int|bool|string|null
     {
         return $this->getKey('Exten') ?: $this->getKey('Extension');
     }
@@ -89,7 +91,7 @@ class NewextenEvent extends EventMessage
      *
      * @return string
      */
-    public function getContext()
+    public function getContext(): string|int|bool|null
     {
         return $this->getKey('Context');
     }
@@ -99,7 +101,7 @@ class NewextenEvent extends EventMessage
      *
      * @return string
      */
-    public function getPriority()
+    public function getPriority(): string|int|bool|null
     {
         return $this->getKey('Priority');
     }
@@ -109,7 +111,7 @@ class NewextenEvent extends EventMessage
      *
      * @return string
      */
-    public function getApplication()
+    public function getApplication(): string|int|bool|null
     {
         return $this->getKey('Application');
     }
@@ -119,7 +121,7 @@ class NewextenEvent extends EventMessage
      *
      * @return string
      */
-    public function getApplicationData()
+    public function getApplicationData(): string|int|bool|null
     {
         return $this->getKey('AppData');
     }
@@ -129,7 +131,7 @@ class NewextenEvent extends EventMessage
      *
      * @return string
      */
-    public function getUniqueID()
+    public function getUniqueID(): string|int|bool|null
     {
         return $this->getKey('UniqueID');
     }

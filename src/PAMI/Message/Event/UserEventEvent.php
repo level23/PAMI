@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Custom user events.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -50,7 +52,7 @@ class UserEventEvent extends EventMessage
      *
      * @return string
      */
-    public function getUserEventName()
+    public function getUserEventName(): string|int|bool|null
     {
         return $this->getKey('UserEvent');
     }
@@ -60,7 +62,7 @@ class UserEventEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -70,7 +72,7 @@ class UserEventEvent extends EventMessage
      *
      * @return string
      */
-    public function getUniqueID()
+    public function getUniqueID(): string|int|bool|null
     {
         return $this->getKey('UniqueID');
     }

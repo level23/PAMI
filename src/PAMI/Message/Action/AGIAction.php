@@ -1,4 +1,5 @@
 <?php
+
 /**
  * AGI action message.
  *

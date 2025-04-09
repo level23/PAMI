@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when a call is transfered.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -50,7 +52,7 @@ class TransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -60,7 +62,7 @@ class TransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getTransferMethod()
+    public function getTransferMethod(): string|int|bool|null
     {
         return $this->getKey('TransferMethod');
     }
@@ -70,7 +72,7 @@ class TransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getTransferType()
+    public function getTransferType(): string|int|bool|null
     {
         return $this->getKey('TransferType');
     }
@@ -80,7 +82,7 @@ class TransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannel()
+    public function getChannel(): string|int|bool|null
     {
         return $this->getKey('Channel');
     }
@@ -90,7 +92,7 @@ class TransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getTargetChannel()
+    public function getTargetChannel(): string|int|bool|null
     {
         return $this->getKey('TargetChannel');
     }
@@ -100,7 +102,7 @@ class TransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getSipCallID()
+    public function getSipCallID(): string|int|bool|null
     {
         return $this->getKey('SIP-Callid');
     }
@@ -110,7 +112,7 @@ class TransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getUniqueID()
+    public function getUniqueID(): string|int|bool|null
     {
         return $this->getKey('UniqueID');
     }
@@ -120,7 +122,7 @@ class TransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getTargetUniqueID()
+    public function getTargetUniqueID(): string|int|bool|null
     {
         return $this->getKey('TargetUniqueid');
     }
@@ -130,7 +132,7 @@ class TransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getTransferExten()
+    public function getTransferExten(): string|int|bool|null
     {
         return $this->getKey('TransferExten');
     }
@@ -140,7 +142,7 @@ class TransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getTransferContext()
+    public function getTransferContext(): string|int|bool|null
     {
         return $this->getKey('TransferContext');
     }

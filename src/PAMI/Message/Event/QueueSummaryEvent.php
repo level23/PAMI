@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered for a QueueSummary action.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 /**
@@ -48,7 +50,7 @@ class QueueSummaryEvent extends EventMessage
      *
      * @return string
      */
-    public function getQueue()
+    public function getQueue(): string|int|bool|null
     {
         return $this->getKey('Queue');
     }
@@ -58,7 +60,7 @@ class QueueSummaryEvent extends EventMessage
      *
      * @return string
      */
-    public function getLoggedIn()
+    public function getLoggedIn(): string|int|bool|null
     {
         return $this->getKey('LoggedIn');
     }
@@ -68,7 +70,7 @@ class QueueSummaryEvent extends EventMessage
      *
      * @return string
      */
-    public function getAvailable()
+    public function getAvailable(): string|int|bool|null
     {
         return $this->getKey('Available');
     }
@@ -78,7 +80,7 @@ class QueueSummaryEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallers()
+    public function getCallers(): string|int|bool|null
     {
         return $this->getKey('Callers');
     }
@@ -88,7 +90,7 @@ class QueueSummaryEvent extends EventMessage
      *
      * @return string
      */
-    public function getHoldTime()
+    public function getHoldTime(): string|int|bool|null
     {
         return $this->getKey('HoldTime');
     }
@@ -98,7 +100,7 @@ class QueueSummaryEvent extends EventMessage
      *
      * @return string
      */
-    public function getLongestHoldTime()
+    public function getLongestHoldTime(): string|int|bool|null
     {
         return $this->getKey('LongestHoldTime');
     }

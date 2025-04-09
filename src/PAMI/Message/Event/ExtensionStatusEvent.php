@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Triggered when an extension changes its status.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -50,7 +52,7 @@ class ExtensionStatusEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -60,7 +62,7 @@ class ExtensionStatusEvent extends EventMessage
      *
      * @return string
      */
-    public function getExtension()
+    public function getExtension(): string|int|bool|null
     {
         return $this->getKey('Exten');
     }
@@ -70,7 +72,7 @@ class ExtensionStatusEvent extends EventMessage
      *
      * @return string
      */
-    public function getContext()
+    public function getContext(): string|int|bool|null
     {
         return $this->getKey('Context');
     }
@@ -80,7 +82,7 @@ class ExtensionStatusEvent extends EventMessage
      *
      * @return string
      */
-    public function getHint()
+    public function getHint(): string|int|bool|null
     {
         return $this->getKey('Hint');
     }
@@ -90,7 +92,7 @@ class ExtensionStatusEvent extends EventMessage
      *
      * @return string
      */
-    public function getStatus()
+    public function getStatus(): string|int|bool|null
     {
         return $this->getKey('Status');
     }

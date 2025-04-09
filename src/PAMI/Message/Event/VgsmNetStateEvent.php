@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Whenever the registration status of a GSM module changes, a
  * vgsm_net_state event is generated. This event is available starting
@@ -29,6 +30,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -54,7 +56,7 @@ class VgsmNetStateEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -64,7 +66,7 @@ class VgsmNetStateEvent extends EventMessage
      *
      * @return string
      */
-    public function getState()
+    public function getState(): string|int|bool|null
     {
         return $this->getKey('X-vGSM-GSM-Registration');
     }

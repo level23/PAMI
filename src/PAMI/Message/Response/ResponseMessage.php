@@ -1,4 +1,5 @@
 <?php
+
 /**
  * A generic response message from ami.
  *
@@ -56,8 +57,6 @@ class ResponseMessage extends IncomingMessage
 
     /**
      * Is this response completed? (with all its events).
-     *
-     * @var bool
      */
     private bool $completed;
 
@@ -79,8 +78,6 @@ class ResponseMessage extends IncomingMessage
      * True if this response is complete. A response is considered complete
      * if it's not a list OR it's a list with its last child event containing
      * an EventList = Complete.
-     *
-     * @return bool
      */
     public function isComplete(): bool
     {
@@ -91,8 +88,6 @@ class ResponseMessage extends IncomingMessage
      * Adds an event to this response.
      *
      * @param EventMessage $event Child event to add.
-     *
-     * @return void
      */
     public function addEvent(EventMessage $event): void
     {
@@ -117,8 +112,6 @@ class ResponseMessage extends IncomingMessage
 
     /**
      * Checks if the Response field has the word Error in it.
-     *
-     * @return bool
      */
     public function isSuccess(): bool
     {
@@ -129,8 +122,6 @@ class ResponseMessage extends IncomingMessage
      * Returns true if this response contains the key EventList with the
      * word 'start' in it. Another way is to have a Message key, like:
      * Message: Result will follow
-     *
-     * @return bool
      */
     public function isList(): bool
     {
@@ -141,8 +132,6 @@ class ResponseMessage extends IncomingMessage
 
     /**
      * Returns key: 'Privilege'.
-     *
-     * @return string
      */
     public function getMessage(): string
     {
@@ -154,8 +143,6 @@ class ResponseMessage extends IncomingMessage
      * decides to not send the Response: or Event: headers.
      *
      * @param string $actionId New ActionId.
-     *
-     * @return void
      */
     public function setActionId(string $actionId): void
     {

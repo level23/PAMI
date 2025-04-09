@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when the Do Not Disturb state is changed on a DAHDI channel.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 /**
@@ -48,7 +50,7 @@ class DNDStateEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -59,7 +61,7 @@ class DNDStateEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannel()
+    public function getChannel(): int|bool|string|null
     {
         return $this->getDAHDIChannel();
     }
@@ -69,7 +71,7 @@ class DNDStateEvent extends EventMessage
      *
      * @return string
      */
-    public function getDAHDIChannel()
+    public function getDAHDIChannel(): int|bool|string|null
     {
         return $this->getKey('DAHDIChannel') ?: $this->getKey('Channel');
     }
@@ -79,7 +81,7 @@ class DNDStateEvent extends EventMessage
      *
      * @return string
      */
-    public function getStatus()
+    public function getStatus(): string|int|bool|null
     {
         return $this->getKey('Status');
     }

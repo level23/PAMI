@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered for a QueueMemberRemove action.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -50,7 +52,7 @@ class QueueMemberRemovedEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -60,7 +62,7 @@ class QueueMemberRemovedEvent extends EventMessage
      *
      * @return string
      */
-    public function getQueue()
+    public function getQueue(): string|int|bool|null
     {
         return $this->getKey('Queue');
     }
@@ -70,7 +72,7 @@ class QueueMemberRemovedEvent extends EventMessage
      *
      * @return string
      */
-    public function getLocation()
+    public function getLocation(): string|int|bool|null
     {
         return $this->getKey('Location');
     }
@@ -80,7 +82,7 @@ class QueueMemberRemovedEvent extends EventMessage
      *
      * @return string
      */
-    public function getMemberName()
+    public function getMemberName(): string|int|bool|null
     {
         return $this->getKey('MemberName');
     }

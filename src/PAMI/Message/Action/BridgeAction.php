@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Bridge action message.
  *

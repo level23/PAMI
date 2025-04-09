@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when a CEL log message is generated
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -50,7 +52,7 @@ class CELEvent extends EventMessage
      *
      * @return string
      */
-    public function getAMAFlags()
+    public function getAMAFlags(): string|int|bool|null
     {
         return $this->getKey('AMAFlags');
     }
@@ -61,7 +63,7 @@ class CELEvent extends EventMessage
      *
      * @return string
      */
-    public function getAccountCode()
+    public function getAccountCode(): string|int|bool|null
     {
         return $this->getKey('AccountCode');
     }
@@ -72,7 +74,7 @@ class CELEvent extends EventMessage
      *
      * @return string
      */
-    public function getAppData()
+    public function getAppData(): string|int|bool|null
     {
         return $this->getKey('AppData');
     }
@@ -83,7 +85,7 @@ class CELEvent extends EventMessage
      *
      * @return string
      */
-    public function getApplication()
+    public function getApplication(): string|int|bool|null
     {
         return $this->getKey('Application');
     }
@@ -94,7 +96,7 @@ class CELEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerIDani()
+    public function getCallerIDani(): string|int|bool|null
     {
         return $this->getKey('CallerIDani');
     }
@@ -105,7 +107,7 @@ class CELEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerIDdnid()
+    public function getCallerIDdnid(): string|int|bool|null
     {
         return $this->getKey('CallerIDdnid');
     }
@@ -116,7 +118,7 @@ class CELEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerIDname()
+    public function getCallerIDname(): string|int|bool|null
     {
         return $this->getKey('CallerIDname');
     }
@@ -127,7 +129,7 @@ class CELEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerIDnum()
+    public function getCallerIDnum(): string|int|bool|null
     {
         return $this->getKey('CallerIDnum');
     }
@@ -138,7 +140,7 @@ class CELEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerIDrdnis()
+    public function getCallerIDrdnis(): string|int|bool|null
     {
         return $this->getKey('CallerIDrdnis');
     }
@@ -149,7 +151,7 @@ class CELEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannel()
+    public function getChannel(): string|int|bool|null
     {
         return $this->getKey('Channel');
     }
@@ -160,7 +162,7 @@ class CELEvent extends EventMessage
      *
      * @return string
      */
-    public function getContext()
+    public function getContext(): string|int|bool|null
     {
         return $this->getKey('Context');
     }
@@ -171,7 +173,7 @@ class CELEvent extends EventMessage
      *
      * @return string
      */
-    public function getEvent()
+    public function getEvent(): string|int|bool|null
     {
         return $this->getKey('Event');
     }
@@ -182,7 +184,7 @@ class CELEvent extends EventMessage
      *
      * @return string
      */
-    public function getEventName()
+    public function getEventName(): string|int|bool|null
     {
         return $this->getKey('EventName');
     }
@@ -193,7 +195,7 @@ class CELEvent extends EventMessage
      *
      * @return string
      */
-    public function getEventTime()
+    public function getEventTime(): string|int|bool|null
     {
         return $this->getKey('EventTime');
     }
@@ -204,7 +206,7 @@ class CELEvent extends EventMessage
      *
      * @return string
      */
-    public function getExten()
+    public function getExten(): string|int|bool|null
     {
         return $this->getKey('Exten');
     }
@@ -215,7 +217,7 @@ class CELEvent extends EventMessage
      *
      * @return string
      */
-    public function getExtra()
+    public function getExtra(): string|int|bool|null
     {
         return $this->getKey('Extra');
     }
@@ -226,7 +228,7 @@ class CELEvent extends EventMessage
      *
      * @return string
      */
-    public function getLinkedID()
+    public function getLinkedID(): string|int|bool|null
     {
         return $this->getKey('LinkedID');
     }
@@ -237,7 +239,7 @@ class CELEvent extends EventMessage
      *
      * @return string
      */
-    public function getPeer()
+    public function getPeer(): string|int|bool|null
     {
         return $this->getKey('Peer');
     }
@@ -248,7 +250,7 @@ class CELEvent extends EventMessage
      *
      * @return string
      */
-    public function getPeerAccount()
+    public function getPeerAccount(): string|int|bool|null
     {
         return $this->getKey('PeerAccount');
     }
@@ -259,7 +261,7 @@ class CELEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -270,7 +272,7 @@ class CELEvent extends EventMessage
      *
      * @return string
      */
-    public function getTimestamp()
+    public function getTimestamp(): string|int|bool|null
     {
         return $this->getKey('Timestamp');
     }
@@ -281,7 +283,7 @@ class CELEvent extends EventMessage
      *
      * @return string
      */
-    public function getUniqueID()
+    public function getUniqueID(): string|int|bool|null
     {
         return $this->getKey('UniqueID');
     }
@@ -292,7 +294,7 @@ class CELEvent extends EventMessage
      *
      * @return string
      */
-    public function getUserfield()
+    public function getUserfield(): string|int|bool|null
     {
         return $this->getKey('Userfield');
     }

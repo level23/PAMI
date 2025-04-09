@@ -1,4 +1,5 @@
 <?php
+
 declare(ticks=1);
 /**
  * TCP Client implementation for AMI.
@@ -61,71 +62,51 @@ class ClientImpl implements IClient
 {
     /**
      * PSR-3 logger.
-     *
-     * @var LoggerInterface
      */
     private LoggerInterface $logger;
 
     /**
      * Hostname
-     *
-     * @var string
      */
-    private string $host;
+    private readonly string $host;
 
     /**
      * TCP Port.
-     *
-     * @var integer
      */
-    private int $port;
+    private readonly int $port;
 
     /**
      * Username
-     *
-     * @var string
      */
-    private string $user;
+    private readonly string $user;
 
     /**
      * Password
-     *
-     * @var string
      */
-    private string $pass;
+    private readonly string $pass;
 
     /**
      * Connection timeout, in seconds.
-     *
-     * @var integer
      */
-    private int $cTimeout;
+    private readonly int $cTimeout;
 
     /**
      * Connection scheme, like tcp:// or tls://
-     *
-     * @var string
      */
-    private string $scheme;
+    private readonly string $scheme;
 
     /**
      * Event factory.
-     *
-     * @var EventFactoryImpl
      */
-    private EventFactoryImpl $eventFactory;
+    private readonly EventFactoryImpl $eventFactory;
 
     /**
      * R/W timeout, in milliseconds.
-     *
-     * @var integer
      */
-    private int $rTimeout;
+    private readonly int $rTimeout;
 
     /**
      * Our stream socket resource.
-     *
-     * @var \PAMI\Stream\Stream
      */
     private Stream $stream;
 
@@ -146,25 +127,19 @@ class ClientImpl implements IClient
     /**
      * Our current received message. May be incomplete, will be completed
      * eventually with an EOM.
-     *
-     * @var string
      */
     private string $currentProcessingMessage = '';
 
     /**
      * This should not happen. Asterisk may send responses without a
      * corresponding ActionId.
-     *
-     * @var string
      */
     private string $lastActionId;
 
     /**
      * Event mask to apply on login action.
-     *
-     * @var string|null
      */
-    private ?string $eventMask;
+    private readonly ?string $eventMask;
 
     /**
      * Constructor.
@@ -174,7 +149,7 @@ class ClientImpl implements IClient
      */
     public function __construct(array $options)
     {
-        $this->logger         = new NullLogger;
+        $this->logger         = new NullLogger();
         $this->host           = $options['host'] ?? '';
         $this->port           = (int)$options['port'];
         $this->user           = $options['username'] ?? '';
@@ -192,8 +167,7 @@ class ClientImpl implements IClient
     /**
      * Opens a tcp connection to ami.
      *
-     * @return void
-     * @throws \PAMI\Client\Exception\ClientException
+     * @throws ClientException
      */
     public function open(): void
     {
@@ -230,7 +204,7 @@ class ClientImpl implements IClient
         $this->logger->debug('Logged in successfully to ami.');
     }
 
-    protected function makeStream(string $address, int $timeout = null): Stream
+    protected function makeStream(string $address, ?int $timeout = null): Stream
     {
         return new Stream($address, $this->cTimeout);
     }
@@ -241,10 +215,7 @@ class ClientImpl implements IClient
      * and an array containing the object and name of the method to invoke. Can specify
      * an optional predicate to invoke before calling the callback.
      *
-     * @param callable|\PAMI\Listener\IEventListener $listener
-     * @param callable|null                          $predicate
      *
-     * @return string
      */
     public function registerEventListener(callable|IEventListener $listener, ?callable $predicate = null): string
     {
@@ -259,8 +230,6 @@ class ClientImpl implements IClient
      * Unregisters an event listener.
      *
      * @param string $listenerId The id returned by registerEventListener.
-     *
-     * @return void
      */
     public function unregisterEventListener(string $listenerId): void
     {
@@ -310,7 +279,7 @@ class ClientImpl implements IClient
      * your own application in order to continue reading events and responses
      * from ami.
      *
-     * @throws \PAMI\Client\Exception\ClientException
+     * @throws ClientException
      */
     public function process(): void
     {
@@ -358,25 +327,18 @@ class ClientImpl implements IClient
      * Tries to find an associated response for the given message.
      *
      * @param IncomingMessage $message Message sent by asterisk.
-     *
-     * @return \PAMI\Message\Response\ResponseMessage|null
      */
     protected function findResponse(IncomingMessage $message): ?ResponseMessage
     {
         $actionId = $message->getActionId();
-        if (isset($this->incomingQueue[$actionId])) {
-            return $this->incomingQueue[$actionId];
-        }
 
-        return null;
+        return $this->incomingQueue[$actionId] ?? null;
     }
 
     /**
      * Dispatches the incoming message to a handler.
      *
-     * @param \PAMI\Message\Event\EventMessage $message Message to dispatch.
-     *
-     * @return void
+     * @param EventMessage $message Message to dispatch.
      */
     protected function dispatch(EventMessage $message): void
     {
@@ -398,8 +360,6 @@ class ClientImpl implements IClient
      * Returns a ResponseMessage from a raw string that came from asterisk.
      *
      * @param string $msg Raw string.
-     *
-     * @return \PAMI\Message\Response\ResponseMessage
      */
     private function messageToResponse(string $msg): ResponseMessage
     {
@@ -416,8 +376,6 @@ class ClientImpl implements IClient
      * Returns a EventMessage from a raw string that came from asterisk.
      *
      * @param string $msg Raw string.
-     *
-     * @return \PAMI\Message\Event\EventMessage
      */
     private function messageToEvent(string $msg): EventMessage
     {
@@ -428,9 +386,8 @@ class ClientImpl implements IClient
      * Returns a message (response) related to the given message. This uses
      * the ActionID tag (key).
      *
-     * @param \PAMI\Message\OutgoingMessage $message
      *
-     * @return false|\PAMI\Message\Response\ResponseMessage
+     * @return false|ResponseMessage
      * @todo not suitable for multi-threaded applications.
      */
     protected function getRelated(OutgoingMessage $message): false|ResponseMessage
@@ -452,10 +409,9 @@ class ClientImpl implements IClient
     /**
      * Sends a message to ami.
      *
-     * @param \PAMI\Message\OutgoingMessage $message Message to send.
+     * @param OutgoingMessage $message Message to send.
      *
-     * @return \PAMI\Message\Response\ResponseMessage
-     * @throws \PAMI\Client\Exception\ClientException
+     * @throws ClientException
      * @see ClientImpl::send()
      */
     public function send(OutgoingMessage $message): ResponseMessage
@@ -488,8 +444,6 @@ class ClientImpl implements IClient
 
     /**
      * Closes the connection to ami.
-     *
-     * @return void
      */
     public function close(): void
     {
@@ -501,8 +455,6 @@ class ClientImpl implements IClient
      * Sets the logger implementation.
      *
      * @param LoggerInterface $logger The PSR3-Logger
-     *
-     * @return void
      */
     public function setLogger(LoggerInterface $logger): void
     {

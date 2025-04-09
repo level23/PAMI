@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when exchanging rtp stats.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -50,7 +52,7 @@ class RTCPSentEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -60,7 +62,7 @@ class RTCPSentEvent extends EventMessage
      *
      * @return string
      */
-    public function getTo()
+    public function getTo(): string|int|bool|null
     {
         return $this->getKey('To');
     }
@@ -70,7 +72,7 @@ class RTCPSentEvent extends EventMessage
      *
      * @return string
      */
-    public function getOurSSRC()
+    public function getOurSSRC(): string|int|bool|null
     {
         return $this->getKey('OurSSRC');
     }
@@ -80,7 +82,7 @@ class RTCPSentEvent extends EventMessage
      *
      * @return string
      */
-    public function getSentNTP()
+    public function getSentNTP(): string|int|bool|null
     {
         return $this->getKey('SentNTP');
     }
@@ -90,7 +92,7 @@ class RTCPSentEvent extends EventMessage
      *
      * @return string
      */
-    public function getSentRTP()
+    public function getSentRTP(): string|int|bool|null
     {
         return $this->getKey('SentRTP');
     }
@@ -100,7 +102,7 @@ class RTCPSentEvent extends EventMessage
      *
      * @return string
      */
-    public function getSentPackets()
+    public function getSentPackets(): string|int|bool|null
     {
         return $this->getKey('SentPackets');
     }
@@ -110,7 +112,7 @@ class RTCPSentEvent extends EventMessage
      *
      * @return string
      */
-    public function getSentOctets()
+    public function getSentOctets(): string|int|bool|null
     {
         return $this->getKey('SentOctets');
     }
@@ -120,7 +122,7 @@ class RTCPSentEvent extends EventMessage
      *
      * @return string
      */
-    public function getReportBlock()
+    public function getReportBlock(): string|int|bool|null
     {
         return $this->getKey('ReportBlock');
     }
@@ -130,7 +132,7 @@ class RTCPSentEvent extends EventMessage
      *
      * @return string
      */
-    public function getFractionLost()
+    public function getFractionLost(): string|int|bool|null
     {
         return $this->getKey('FractionLost');
     }
@@ -140,7 +142,7 @@ class RTCPSentEvent extends EventMessage
      *
      * @return string
      */
-    public function getCumulativeLoss()
+    public function getCumulativeLoss(): string|int|bool|null
     {
         return $this->getKey('CumulativeLoss');
     }
@@ -150,7 +152,7 @@ class RTCPSentEvent extends EventMessage
      *
      * @return string
      */
-    public function getIAJitter()
+    public function getIAJitter(): string|int|bool|null
     {
         return $this->getKey('IAJitter');
     }
@@ -160,7 +162,7 @@ class RTCPSentEvent extends EventMessage
      *
      * @return string
      */
-    public function getTheirLastSR()
+    public function getTheirLastSR(): string|int|bool|null
     {
         return $this->getKey('TheirLastSR');
     }
@@ -170,7 +172,7 @@ class RTCPSentEvent extends EventMessage
      *
      * @return string
      */
-    public function getDLSR()
+    public function getDLSR(): string|int|bool|null
     {
         return $this->getKey('DLSR');
     }

@@ -1,4 +1,5 @@
 <?php
+
 //declare(ticks=1);
 /**
  * PAMI basic use example.
@@ -28,7 +29,7 @@
  */
 if ($argc != 7) {
     echo "Use: $argv[0] <host> <port> <user> <pass> <connect timeout> <read timeout>";
-    exit (254);
+    exit(254);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -141,8 +142,7 @@ class A implements IEventListener
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-try
-{
+try {
     $options = array(
         'host' => $argv[1],
         'port' => $argv[2],
@@ -152,7 +152,7 @@ try
         'read_timeout' => $argv[6],
         'scheme' => 'tcp://' // try tls://
     );
-	$a = new ClientImpl($options);
+    $a = new ClientImpl($options);
     // Registering a closure
     //$client->registerEventListener(function ($event) {
     //});
@@ -161,105 +161,105 @@ try
     //$client->registerEventListener(array($listener, 'handle'));
 
     // Register an IEventListener:
-	$a->registerEventListener(new A());
-	$a->open();
-/*
-	var_dump($a->send(new DongleSendUSSDAction('dongle01', '*101#')));
-	var_dump($a->send(new DongleSendPDUAction('dongle01', 'AT+CSMS=0 ')));
-	var_dump($a->send(new DongleRestartAction('now', 'dongle01')));
-	var_dump($a->send(new DongleResetAction('dongle01')));
-	var_dump($a->send(new DongleReloadAction('now')));
-	var_dump($a->send(new DongleStopAction('now', 'dongle01')));
-	var_dump($a->send(new DongleStartAction('dongle01')));
-	var_dump($a->send(new DongleSendSMSAction('dongle01', '+666666666', 'a message')));
-	var_dump($a->send(new ListCommandsAction()));
-	var_dump($a->send(new QueueStatusAction()));
-	var_dump($a->send(new QueueStatusAction()));
-	var_dump($a->send(new QueueStatusAction()));
-	var_dump($a->send(new CoreShowChannelsAction()));
-	var_dump($a->send(new SIPPeersAction()));
-	var_dump($a->send(new StatusAction()));
-	var_dump($a->send(new CommandAction('sip show peers')));
-	var_dump($a->send(new SIPShowRegistryAction()));
-	var_dump($a->send(new CoreSettingsAction()));
-	var_dump($a->send(new ListCategoriesAction('sip.conf')));
-	var_dump($a->send(new CoreStatusAction()));
-	var_dump($a->send(new GetConfigAction('extensions.conf')));
-	var_dump($a->send(new GetConfigAction('sip.conf', 'general')));
-	var_dump($a->send(new GetConfigJSONAction('extensions.conf')));
-	var_dump($a->send(new DAHDIShowChannelsAction()));
-	var_dump($a->send(new AgentsAction()));
-	var_dump($a->send(new MailboxStatusAction('marcelog@gmail')));
-	var_dump($a->send(new MailboxCountAction('marcelog@gmail')));
-	var_dump($a->send(new VoicemailUsersListAction()));
-	var_dump($a->send(new DBPutAction('something', 'a', 'a')));
-	var_dump($a->send(new DBGetAction('something', 'a')));
-	var_dump($a->send(new DBDelAction('something', 'a')));
-	var_dump($a->send(new DBDelTreeAction('something', 'a')));
-	var_dump($a->send(new SetVarAction('foo', 'asd')));
-	var_dump($a->send(new SetVarAction('foo', 'asd', 'SIP/a-1')));
-	var_dump($a->send(new GetVarAction('foo')));
-	var_dump($a->send(new ParkedCallsAction()));
-	var_dump($a->send(new GetVarAction('foo', 'SIP/a-1')));
-	var_dump($a->send(new PingAction()));
-	var_dump($a->send(new ExtensionStateAction('1', 'default')));
-	var_dump($a->send(new ModuleCheckAction('chan_sip')));
-	var_dump($a->send(new SIPShowPeerAction('marcelog')));
-	var_dump($a->send(new QueuePauseAction('Agent/123')));
-	var_dump($a->send(new QueueUnpauseAction('Agent/123')));
-	var_dump($a->send(new QueueStatusAction()));
-	$notify = new SIPNotifyAction('marcelog');
-	$notify->setVariable('a', 'b');
-	var_dump($a->send($notify));
-	var_dump($a->send(new ShowDialPlanAction()));
-	var_dump($a->send(new QueueSummaryAction()));
-	var_dump($a->send(new QueueLogAction('a', 'asdasd')));
-	var_dump($a->send(new QueuePenaltyAction('Agent/123', '123')));
-	var_dump($a->send(new QueueResetAction('a')));
-	var_dump($a->send(new QueueRuleAction('a')));
-*/
-	//var_dump($a->send(new QueueReloadAction('a', true, true, true)));
-	//
-	// The following are commented just in case you run it in the wrong box ;)
-	//
-	//var_dump($a->send(new QueueRemoveAction('a', 'Agent/123')));
-	//var_dump($a->send(new MeetmeListAction('asd')));
-	//var_dump($a->send(new MeetmeMuteAction('asd', 'asd')));
-	//var_dump($a->send(new MeetmeUnmuteAction('asd', 'asd')));
-	//var_dump($a->send(new ParkAction('a', 'b')));
-	//var_dump($a->send(new JabberSendAction('a', 'b', 'c')));
-	//var_dump($a->send(new QueuesAction()));
-	//var_dump($a->send(new MonitorAction('DAHDI/1-1', 'monitor')));
-	//var_dump($a->send(new PauseMonitorAction('DAHDI/1-1')));
-	//var_dump($a->send(new UnpauseMonitorAction('DAHDI/1-1')));
-	//var_dump($a->send(new StopMonitorAction('DAHDI/1-1')));
-	//var_dump($a->send(new SipQualifyPeerAction('marcelog')));
-	//var_dump($a->send(new AgentLogoffAction('a', true)));
-	//var_dump($a->send(new PlayDTMFAction('DAHDI/1-1', '1')));
-	//var_dump($a->send(new CreateConfigAction('foo.conf')));
-	//var_dump($a->send(new DAHDIDNDOnAction('1')));
-	//var_dump($a->send(new DAHDIDNDOffAction('1')));
-	//var_dump($a->send(new DAHDIDialOffHookAction(1, '113')));
-	//var_dump($a->send(new DAHDIRestartAction()));
-	//var_dump($a->send(new RedirectAction('SIP/a-1', '51992266', 'netlabs', '1')));
-	//var_dump($a->send(new AttendedTransferAction('SIP/a-1', '51992266', 'netlabs', '1')));
-	//var_dump($a->send(new ModuleReloadAction('chan_sip.so')));
-	//var_dump($a->send(new ModuleLoadAction('chan_sip.so')));
-	//var_dump($a->send(new ModuleUnloadAction('chan_sip.so')));
-	//$originateMsg = new OriginateAction('SIP/marcelog');
-	//$originateMsg->setContext('netlabs');
-	//$originateMsg->setPriority('1');
-	//$originateMsg->setExtension('51992266');
-	//var_dump($a->send($originateMsg));
-	//var_dump($a->send(new AbsoluteTimeoutAction('SIP/XXXX-123123', 10)));
-	//var_dump($a->send(new BridgeAction('SIP/a-1', 'SIP/a-2', true)));
-	//var_dump($a->send(new LogoffAction()));
-	//var_dump($a->send(new HangupAction('SIP/XXXX-123123')));
-	//var_dump($a->send(new DAHDIHangupAction('1')));
-	//var_dump($a->send(new ReloadAction()));
-	//var_dump($a->send(new ReloadAction('chan_sip')));
-	//var_dump($a->send(new LocalOptimizeAwayAction('SIP/a-1')));
-	//var_dump($a->send(new EventsAction()));
+    $a->registerEventListener(new A());
+    $a->open();
+    /*
+        var_dump($a->send(new DongleSendUSSDAction('dongle01', '*101#')));
+        var_dump($a->send(new DongleSendPDUAction('dongle01', 'AT+CSMS=0 ')));
+        var_dump($a->send(new DongleRestartAction('now', 'dongle01')));
+        var_dump($a->send(new DongleResetAction('dongle01')));
+        var_dump($a->send(new DongleReloadAction('now')));
+        var_dump($a->send(new DongleStopAction('now', 'dongle01')));
+        var_dump($a->send(new DongleStartAction('dongle01')));
+        var_dump($a->send(new DongleSendSMSAction('dongle01', '+666666666', 'a message')));
+        var_dump($a->send(new ListCommandsAction()));
+        var_dump($a->send(new QueueStatusAction()));
+        var_dump($a->send(new QueueStatusAction()));
+        var_dump($a->send(new QueueStatusAction()));
+        var_dump($a->send(new CoreShowChannelsAction()));
+        var_dump($a->send(new SIPPeersAction()));
+        var_dump($a->send(new StatusAction()));
+        var_dump($a->send(new CommandAction('sip show peers')));
+        var_dump($a->send(new SIPShowRegistryAction()));
+        var_dump($a->send(new CoreSettingsAction()));
+        var_dump($a->send(new ListCategoriesAction('sip.conf')));
+        var_dump($a->send(new CoreStatusAction()));
+        var_dump($a->send(new GetConfigAction('extensions.conf')));
+        var_dump($a->send(new GetConfigAction('sip.conf', 'general')));
+        var_dump($a->send(new GetConfigJSONAction('extensions.conf')));
+        var_dump($a->send(new DAHDIShowChannelsAction()));
+        var_dump($a->send(new AgentsAction()));
+        var_dump($a->send(new MailboxStatusAction('marcelog@gmail')));
+        var_dump($a->send(new MailboxCountAction('marcelog@gmail')));
+        var_dump($a->send(new VoicemailUsersListAction()));
+        var_dump($a->send(new DBPutAction('something', 'a', 'a')));
+        var_dump($a->send(new DBGetAction('something', 'a')));
+        var_dump($a->send(new DBDelAction('something', 'a')));
+        var_dump($a->send(new DBDelTreeAction('something', 'a')));
+        var_dump($a->send(new SetVarAction('foo', 'asd')));
+        var_dump($a->send(new SetVarAction('foo', 'asd', 'SIP/a-1')));
+        var_dump($a->send(new GetVarAction('foo')));
+        var_dump($a->send(new ParkedCallsAction()));
+        var_dump($a->send(new GetVarAction('foo', 'SIP/a-1')));
+        var_dump($a->send(new PingAction()));
+        var_dump($a->send(new ExtensionStateAction('1', 'default')));
+        var_dump($a->send(new ModuleCheckAction('chan_sip')));
+        var_dump($a->send(new SIPShowPeerAction('marcelog')));
+        var_dump($a->send(new QueuePauseAction('Agent/123')));
+        var_dump($a->send(new QueueUnpauseAction('Agent/123')));
+        var_dump($a->send(new QueueStatusAction()));
+        $notify = new SIPNotifyAction('marcelog');
+        $notify->setVariable('a', 'b');
+        var_dump($a->send($notify));
+        var_dump($a->send(new ShowDialPlanAction()));
+        var_dump($a->send(new QueueSummaryAction()));
+        var_dump($a->send(new QueueLogAction('a', 'asdasd')));
+        var_dump($a->send(new QueuePenaltyAction('Agent/123', '123')));
+        var_dump($a->send(new QueueResetAction('a')));
+        var_dump($a->send(new QueueRuleAction('a')));
+    */
+    //var_dump($a->send(new QueueReloadAction('a', true, true, true)));
+    //
+    // The following are commented just in case you run it in the wrong box ;)
+    //
+    //var_dump($a->send(new QueueRemoveAction('a', 'Agent/123')));
+    //var_dump($a->send(new MeetmeListAction('asd')));
+    //var_dump($a->send(new MeetmeMuteAction('asd', 'asd')));
+    //var_dump($a->send(new MeetmeUnmuteAction('asd', 'asd')));
+    //var_dump($a->send(new ParkAction('a', 'b')));
+    //var_dump($a->send(new JabberSendAction('a', 'b', 'c')));
+    //var_dump($a->send(new QueuesAction()));
+    //var_dump($a->send(new MonitorAction('DAHDI/1-1', 'monitor')));
+    //var_dump($a->send(new PauseMonitorAction('DAHDI/1-1')));
+    //var_dump($a->send(new UnpauseMonitorAction('DAHDI/1-1')));
+    //var_dump($a->send(new StopMonitorAction('DAHDI/1-1')));
+    //var_dump($a->send(new SipQualifyPeerAction('marcelog')));
+    //var_dump($a->send(new AgentLogoffAction('a', true)));
+    //var_dump($a->send(new PlayDTMFAction('DAHDI/1-1', '1')));
+    //var_dump($a->send(new CreateConfigAction('foo.conf')));
+    //var_dump($a->send(new DAHDIDNDOnAction('1')));
+    //var_dump($a->send(new DAHDIDNDOffAction('1')));
+    //var_dump($a->send(new DAHDIDialOffHookAction(1, '113')));
+    //var_dump($a->send(new DAHDIRestartAction()));
+    //var_dump($a->send(new RedirectAction('SIP/a-1', '51992266', 'netlabs', '1')));
+    //var_dump($a->send(new AttendedTransferAction('SIP/a-1', '51992266', 'netlabs', '1')));
+    //var_dump($a->send(new ModuleReloadAction('chan_sip.so')));
+    //var_dump($a->send(new ModuleLoadAction('chan_sip.so')));
+    //var_dump($a->send(new ModuleUnloadAction('chan_sip.so')));
+    //$originateMsg = new OriginateAction('SIP/marcelog');
+    //$originateMsg->setContext('netlabs');
+    //$originateMsg->setPriority('1');
+    //$originateMsg->setExtension('51992266');
+    //var_dump($a->send($originateMsg));
+    //var_dump($a->send(new AbsoluteTimeoutAction('SIP/XXXX-123123', 10)));
+    //var_dump($a->send(new BridgeAction('SIP/a-1', 'SIP/a-2', true)));
+    //var_dump($a->send(new LogoffAction()));
+    //var_dump($a->send(new HangupAction('SIP/XXXX-123123')));
+    //var_dump($a->send(new DAHDIHangupAction('1')));
+    //var_dump($a->send(new ReloadAction()));
+    //var_dump($a->send(new ReloadAction('chan_sip')));
+    //var_dump($a->send(new LocalOptimizeAwayAction('SIP/a-1')));
+    //var_dump($a->send(new EventsAction()));
     //var_dump($a->send(new QueuesAction())->getRawContent());
     //
     // SMS
@@ -269,16 +269,15 @@ try
     //$sms->setCellPhone($phone);
     //$a->send($sms);
 
-	$time = time();
-	while(true)//(time() - $time) < 60) // Wait for events.
-	{
-	    usleep(1000); // 1ms delay
-	    // Since we declare(ticks=1) at the top, the following line is not necessary
-	    $a->process();
-	}
-	$a->close(); // send logoff and close the connection.
+    $time = time();
+    while (true) {//(time() - $time) < 60) // Wait for events.
+        usleep(1000); // 1ms delay
+        // Since we declare(ticks=1) at the top, the following line is not necessary
+        $a->process();
+    }
+    $a->close(); // send logoff and close the connection.
 } catch (Exception $e) {
-	echo $e->getMessage() . "\n";
+    echo $e->getMessage() . "\n";
 }
 ////////////////////////////////////////////////////////////////////////////////
 // Code ENDS.

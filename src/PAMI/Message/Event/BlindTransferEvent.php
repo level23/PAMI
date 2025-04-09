@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when a blind transfer is complete.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 /**
@@ -43,17 +45,17 @@ namespace PAMI\Message\Event;
  */
 class BlindTransferEvent extends EventMessage
 {
-    const RESULT_FAIL = 'Fail';
-    const RESULT_INVALID = 'Invalid';
-    const RESULT_NOT_PERMITTED = 'Not Permitted';
-    const RESULT_SUCCESS = 'Success';
+    public const RESULT_FAIL = 'Fail';
+    public const RESULT_INVALID = 'Invalid';
+    public const RESULT_NOT_PERMITTED = 'Not Permitted';
+    public const RESULT_SUCCESS = 'Success';
 
     /**
      * Returns key: 'Privilege'.
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -69,7 +71,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getResult()
+    public function getResult(): string|int|bool|null
     {
         return $this->getKey('Result');
     }
@@ -79,7 +81,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getTransfererChannel()
+    public function getTransfererChannel(): string|int|bool|null
     {
         return $this->getKey('TransfererChannel');
     }
@@ -90,7 +92,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getTransfererChannelState()
+    public function getTransfererChannelState(): string|int|bool|null
     {
         return $this->getKey('TransfererChannelState');
     }
@@ -112,7 +114,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getTransfererChannelStateDesc()
+    public function getTransfererChannelStateDesc(): string|int|bool|null
     {
         return $this->getKey('TransfererChannelStateDesc');
     }
@@ -122,7 +124,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getTransfererCallerIDNum()
+    public function getTransfererCallerIDNum(): string|int|bool|null
     {
         return $this->getKey('TransfererCallerIDNum');
     }
@@ -132,7 +134,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getTransfererCallerIDName()
+    public function getTransfererCallerIDName(): string|int|bool|null
     {
         return $this->getKey('TransfererCallerIDName');
     }
@@ -142,7 +144,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getTransfererConnectedLineNum()
+    public function getTransfererConnectedLineNum(): string|int|bool|null
     {
         return $this->getKey('TransfererConnectedLineNum');
     }
@@ -152,7 +154,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getTransfererConnectedLineName()
+    public function getTransfererConnectedLineName(): string|int|bool|null
     {
         return $this->getKey('TransfererConnectedLineName');
     }
@@ -162,7 +164,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getTransfererAccountCode()
+    public function getTransfererAccountCode(): string|int|bool|null
     {
         return $this->getKey('TransfererAccountCode');
     }
@@ -172,7 +174,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getTransfererContext()
+    public function getTransfererContext(): string|int|bool|null
     {
         return $this->getKey('TransfererContext');
     }
@@ -182,7 +184,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getTransfererExten()
+    public function getTransfererExten(): string|int|bool|null
     {
         return $this->getKey('TransfererExten');
     }
@@ -192,7 +194,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getTransfererPriority()
+    public function getTransfererPriority(): string|int|bool|null
     {
         return $this->getKey('TransfererPriority');
     }
@@ -202,7 +204,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getTransfererUniqueid()
+    public function getTransfererUniqueid(): string|int|bool|null
     {
         return $this->getKey('TransfererUniqueid');
     }
@@ -212,7 +214,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getTransfereeChannel()
+    public function getTransfereeChannel(): string|int|bool|null
     {
         return $this->getKey('TransfereeChannel');
     }
@@ -223,7 +225,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getTransfereeChannelState()
+    public function getTransfereeChannelState(): string|int|bool|null
     {
         return $this->getKey('TransfereeChannelState');
     }
@@ -245,7 +247,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getTransfereeChannelStateDesc()
+    public function getTransfereeChannelStateDesc(): string|int|bool|null
     {
         return $this->getKey('TransfereeChannelStateDesc');
     }
@@ -255,7 +257,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getTransfereeCallerIDNum()
+    public function getTransfereeCallerIDNum(): string|int|bool|null
     {
         return $this->getKey('TransfereeCallerIDNum');
     }
@@ -265,7 +267,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getTransfereeCallerIDName()
+    public function getTransfereeCallerIDName(): string|int|bool|null
     {
         return $this->getKey('TransfereeCallerIDName');
     }
@@ -275,7 +277,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getTransfereeConnectedLineNum()
+    public function getTransfereeConnectedLineNum(): string|int|bool|null
     {
         return $this->getKey('TransfereeConnectedLineNum');
     }
@@ -285,7 +287,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getTransfereeConnectedLineName()
+    public function getTransfereeConnectedLineName(): string|int|bool|null
     {
         return $this->getKey('TransfereeConnectedLineName');
     }
@@ -295,7 +297,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getTransfereeAccountCode()
+    public function getTransfereeAccountCode(): string|int|bool|null
     {
         return $this->getKey('TransfereeAccountCode');
     }
@@ -305,7 +307,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getTransfereeContext()
+    public function getTransfereeContext(): string|int|bool|null
     {
         return $this->getKey('TransfereeContext');
     }
@@ -315,7 +317,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getTransfereeExten()
+    public function getTransfereeExten(): string|int|bool|null
     {
         return $this->getKey('TransfereeExten');
     }
@@ -325,7 +327,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getTransfereePriority()
+    public function getTransfereePriority(): string|int|bool|null
     {
         return $this->getKey('TransfereePriority');
     }
@@ -335,7 +337,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getTransfereeUniqueid()
+    public function getTransfereeUniqueid(): string|int|bool|null
     {
         return $this->getKey('TransfereeUniqueid');
     }
@@ -345,7 +347,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getBridgeUniqueid()
+    public function getBridgeUniqueid(): string|int|bool|null
     {
         return $this->getKey('BridgeUniqueid');
     }
@@ -356,7 +358,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getBridgeType()
+    public function getBridgeType(): string|int|bool|null
     {
         return $this->getKey('BridgeType');
     }
@@ -367,7 +369,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getBridgeTechnology()
+    public function getBridgeTechnology(): string|int|bool|null
     {
         return $this->getKey('BridgeTechnology');
     }
@@ -378,7 +380,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getBridgeCreator()
+    public function getBridgeCreator(): string|int|bool|null
     {
         return $this->getKey('BridgeCreator');
     }
@@ -389,7 +391,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getBridgeName()
+    public function getBridgeName(): string|int|bool|null
     {
         return $this->getKey('BridgeName');
     }
@@ -400,7 +402,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getBridgeNumChannels()
+    public function getBridgeNumChannels(): string|int|bool|null
     {
         return $this->getKey('BridgeNumChannels');
     }
@@ -415,7 +417,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getIsExternal()
+    public function getIsExternal(): string|int|bool|null
     {
         return $this->getKey('IsExternal');
     }
@@ -423,10 +425,8 @@ class BlindTransferEvent extends EventMessage
     /**
      * Indicates if the transfer was performed outside of Asterisk.
      * For instance, a channel protocol native transfer is external. A DTMF transfer is internal.
-     *
-     * @return bool
      */
-    public function isExternal()
+    public function isExternal(): bool
     {
         return $this->getIsExternal() === 'Yes';
     }
@@ -437,7 +437,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getContext()
+    public function getContext(): string|int|bool|null
     {
         return $this->getKey('Context');
     }
@@ -448,7 +448,7 @@ class BlindTransferEvent extends EventMessage
      *
      * @return string
      */
-    public function getExtension()
+    public function getExtension(): string|int|bool|null
     {
         return $this->getKey('Extension');
     }

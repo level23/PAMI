@@ -1,4 +1,5 @@
 <?php
+
 /**
  * DBDelTree action message.
  *

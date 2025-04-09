@@ -50,6 +50,3 @@ if (!function_exists('setMockedTime')) {
         $mockedTime = $time;
     }
 }
-
-
-

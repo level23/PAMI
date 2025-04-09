@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Returns detailed information about a bridge and the channels in it.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Action;
 
 /**

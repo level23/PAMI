@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when a dial is executed.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -50,7 +52,7 @@ class DialEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -60,7 +62,7 @@ class DialEvent extends EventMessage
      *
      * @return string
      */
-    public function getSubEvent()
+    public function getSubEvent(): string|int|bool|null
     {
         return $this->getKey('SubEvent');
     }
@@ -70,7 +72,7 @@ class DialEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannel()
+    public function getChannel(): string|int|bool|null
     {
         return $this->getKey('Channel');
     }
@@ -80,7 +82,7 @@ class DialEvent extends EventMessage
      *
      * @return string
      */
-    public function getDestination()
+    public function getDestination(): string|int|bool|null
     {
         return $this->getKey('Destination');
     }
@@ -90,7 +92,7 @@ class DialEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerIDNum()
+    public function getCallerIDNum(): string|int|bool|null
     {
         return $this->getKey('CallerIDNum');
     }
@@ -100,7 +102,7 @@ class DialEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerIDName()
+    public function getCallerIDName(): string|int|bool|null
     {
         return $this->getKey('CallerIDName');
     }
@@ -110,7 +112,7 @@ class DialEvent extends EventMessage
      *
      * @return string
      */
-    public function getUniqueID()
+    public function getUniqueID(): string|int|bool|null
     {
         return $this->getKey('UniqueID');
     }
@@ -120,7 +122,7 @@ class DialEvent extends EventMessage
      *
      * @return string
      */
-    public function getDestUniqueID()
+    public function getDestUniqueID(): string|int|bool|null
     {
         return $this->getKey('DestUniqueID');
     }
@@ -130,7 +132,7 @@ class DialEvent extends EventMessage
      *
      * @return string
      */
-    public function getDialString()
+    public function getDialString(): string|int|bool|null
     {
         return $this->getKey('DialString');
     }
@@ -140,7 +142,7 @@ class DialEvent extends EventMessage
      *
      * @return string
      */
-    public function getDialStatus()
+    public function getDialStatus(): string|int|bool|null
     {
         return $this->getKey('DialStatus');
     }

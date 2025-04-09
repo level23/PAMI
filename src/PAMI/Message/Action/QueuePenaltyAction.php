@@ -1,4 +1,5 @@
 <?php
+
 /**
  * QueuePenalty action message.
  *

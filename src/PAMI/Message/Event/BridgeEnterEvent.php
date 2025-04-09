@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when a channel enters a bridge.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 /**
@@ -48,7 +50,7 @@ class BridgeEnterEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -58,7 +60,7 @@ class BridgeEnterEvent extends EventMessage
      *
      * @return string
      */
-    public function getBridgeUniqueid()
+    public function getBridgeUniqueid(): string|int|bool|null
     {
         return $this->getKey('BridgeUniqueid');
     }
@@ -68,7 +70,7 @@ class BridgeEnterEvent extends EventMessage
      *
      * @return string
      */
-    public function getBridgeType()
+    public function getBridgeType(): string|int|bool|null
     {
         return $this->getKey('BridgeType');
     }
@@ -78,7 +80,7 @@ class BridgeEnterEvent extends EventMessage
      *
      * @return string
      */
-    public function getBridgeTechnology()
+    public function getBridgeTechnology(): string|int|bool|null
     {
         return $this->getKey('BridgeTechnology');
     }
@@ -88,7 +90,7 @@ class BridgeEnterEvent extends EventMessage
      *
      * @return string
      */
-    public function getBridgeCreator()
+    public function getBridgeCreator(): string|int|bool|null
     {
         return $this->getKey('BridgeCreator');
     }
@@ -98,7 +100,7 @@ class BridgeEnterEvent extends EventMessage
      *
      * @return string
      */
-    public function getBridgeName()
+    public function getBridgeName(): string|int|bool|null
     {
         return $this->getKey('BridgeName');
     }
@@ -108,7 +110,7 @@ class BridgeEnterEvent extends EventMessage
      *
      * @return string
      */
-    public function getBridgeNumChannels()
+    public function getBridgeNumChannels(): string|int|bool|null
     {
         return $this->getKey('BridgeNumChannels');
     }
@@ -118,7 +120,7 @@ class BridgeEnterEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannel()
+    public function getChannel(): string|int|bool|null
     {
         return $this->getKey('Channel');
     }
@@ -128,7 +130,7 @@ class BridgeEnterEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannelState()
+    public function getChannelState(): string|int|bool|null
     {
         return $this->getKey('ChannelState');
     }
@@ -138,7 +140,7 @@ class BridgeEnterEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannelStateDesc()
+    public function getChannelStateDesc(): string|int|bool|null
     {
         return $this->getKey('ChannelStateDesc');
     }
@@ -148,7 +150,7 @@ class BridgeEnterEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerIDNum()
+    public function getCallerIDNum(): string|int|bool|null
     {
         return $this->getKey('CallerIDNum');
     }
@@ -158,7 +160,7 @@ class BridgeEnterEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerIDName()
+    public function getCallerIDName(): string|int|bool|null
     {
         return $this->getKey('CallerIDName');
     }
@@ -168,7 +170,7 @@ class BridgeEnterEvent extends EventMessage
      *
      * @return string
      */
-    public function getConnectedLineNum()
+    public function getConnectedLineNum(): string|int|bool|null
     {
         return $this->getKey('ConnectedLineNum');
     }
@@ -178,7 +180,7 @@ class BridgeEnterEvent extends EventMessage
      *
      * @return string
      */
-    public function getConnectedLineName()
+    public function getConnectedLineName(): string|int|bool|null
     {
         return $this->getKey('ConnectedLineName');
     }
@@ -188,7 +190,7 @@ class BridgeEnterEvent extends EventMessage
      *
      * @return string
      */
-    public function getAccountCode()
+    public function getAccountCode(): string|int|bool|null
     {
         return $this->getKey('AccountCode');
     }
@@ -198,7 +200,7 @@ class BridgeEnterEvent extends EventMessage
      *
      * @return string
      */
-    public function getContext()
+    public function getContext(): string|int|bool|null
     {
         return $this->getKey('Context');
     }
@@ -208,7 +210,7 @@ class BridgeEnterEvent extends EventMessage
      *
      * @return string
      */
-    public function getExten()
+    public function getExten(): string|int|bool|null
     {
         return $this->getKey('Exten');
     }
@@ -218,7 +220,7 @@ class BridgeEnterEvent extends EventMessage
      *
      * @return string
      */
-    public function getPriority()
+    public function getPriority(): string|int|bool|null
     {
         return $this->getKey('Priority');
     }
@@ -228,7 +230,7 @@ class BridgeEnterEvent extends EventMessage
      *
      * @return string
      */
-    public function getUniqueid()
+    public function getUniqueid(): string|int|bool|null
     {
         return $this->getKey('Uniqueid');
     }
@@ -238,7 +240,7 @@ class BridgeEnterEvent extends EventMessage
      *
      * @return string
      */
-    public function getSwapUniqueid()
+    public function getSwapUniqueid(): string|int|bool|null
     {
         return $this->getKey('SwapUniqueid');
     }

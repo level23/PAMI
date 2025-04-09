@@ -1,4 +1,5 @@
 <?php
+
 /**
  * A generic ami message, in-or-outbound.
  *
@@ -47,13 +48,13 @@ abstract class Message
      *
      * @var string
      */
-    const EOL = "\r\n";
+    public const EOL = "\r\n";
     /**
      * End Of Message means this token.
      *
      * @var string
      */
-    const EOM = "\r\n\r\n";
+    public const EOM = "\r\n\r\n";
 
     /**
      * Message content, line by line. This is what it gets sent
@@ -79,8 +80,6 @@ abstract class Message
 
     /**
      * Created date (unix timestamp).
-     *
-     * @var integer
      */
     protected int $createdDate;
 
@@ -96,8 +95,6 @@ abstract class Message
 
     /**
      * Returns created date.
-     *
-     * @return integer
      */
     public function getCreatedDate(): int
     {
@@ -109,8 +106,6 @@ abstract class Message
      *
      * @param string $key   Variable name.
      * @param mixed $value Variable value.
-     *
-     * @return void
      */
     public function setVariable(string $key, mixed $value): void
     {
@@ -121,8 +116,6 @@ abstract class Message
      * Returns a variable by name.
      *
      * @param string $key Variable name.
-     *
-     * @return mixed
      */
     public function getVariable(string $key): mixed
     {
@@ -138,8 +131,6 @@ abstract class Message
      *
      * @param string          $key   Key name (i.e: Action).
      * @param string|int|bool $value Key value.
-     *
-     * @return void
      */
     protected function setKey(string $key, string|int|bool $value): void
     {
@@ -151,8 +142,6 @@ abstract class Message
      * Returns a key by name.
      *
      * @param string $key Key name (i.e: Action).
-     *
-     * @return string|int|bool|null
      */
     public function getKey(string $key): string|int|bool|null
     {
@@ -187,9 +176,7 @@ abstract class Message
     /**
      * Returns the end of message token appended to the end of a given message.
      *
-     * @param string $message
      *
-     * @return string
      */
     protected function finishMessage(string $message): string
     {
@@ -199,10 +186,7 @@ abstract class Message
     /**
      * Returns the string representation for an ami action variable.
      *
-     * @param string $key
-     * @param string $value
      *
-     * @return string
      */
     private function serializeVariable(string $key, string $value): string
     {
@@ -212,8 +196,6 @@ abstract class Message
     /**
      * Gives a string representation for this message, ready to be sent to
      * ami.
-     *
-     * @return string
      */
     public function serialize(): string
     {
@@ -236,8 +218,6 @@ abstract class Message
 
     /**
      * Returns key: 'ActionID'.
-     *
-     * @return string
      */
     public function getActionID(): string
     {

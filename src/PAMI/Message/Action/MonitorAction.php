@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Monitor action message. Will always record with .wav format and mixing the
  * input and output channels. Also, the filename is mandatory:
@@ -31,6 +32,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Action;
 
 /**

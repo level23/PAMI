@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when a variable is set via agi or dialplan.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -50,7 +52,7 @@ class VarSetEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -60,7 +62,7 @@ class VarSetEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannel()
+    public function getChannel(): string|int|bool|null
     {
         return $this->getKey('Channel');
     }
@@ -70,7 +72,7 @@ class VarSetEvent extends EventMessage
      *
      * @return string
      */
-    public function getVariableName()
+    public function getVariableName(): string|int|bool|null
     {
         return $this->getKey('Variable');
     }
@@ -80,7 +82,7 @@ class VarSetEvent extends EventMessage
      *
      * @return string
      */
-    public function getValue()
+    public function getValue(): string|int|bool|null
     {
         return $this->getKey('Value');
     }
@@ -90,7 +92,7 @@ class VarSetEvent extends EventMessage
      *
      * @return string
      */
-    public function getUniqueID()
+    public function getUniqueID(): string|int|bool|null
     {
         return $this->getKey('UniqueID');
     }

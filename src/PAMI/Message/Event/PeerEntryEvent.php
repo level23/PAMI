@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered for each peer when an action Sippeers is issued.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -50,7 +52,7 @@ class PeerEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannelType()
+    public function getChannelType(): string|int|bool|null
     {
         return $this->getKey('ChannelType');
     }
@@ -60,7 +62,7 @@ class PeerEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getObjectName()
+    public function getObjectName(): string|int|bool|null
     {
         return $this->getKey('ObjectName');
     }
@@ -70,7 +72,7 @@ class PeerEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannelObjectType()
+    public function getChannelObjectType(): string|int|bool|null
     {
         return $this->getKey('ChanObjectType');
     }
@@ -80,7 +82,7 @@ class PeerEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getIPAddress()
+    public function getIPAddress(): string|int|bool|null
     {
         return $this->getKey('IPAddress');
     }
@@ -90,7 +92,7 @@ class PeerEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getIPPort()
+    public function getIPPort(): string|int|bool|null
     {
         return $this->getKey('IPPort');
     }
@@ -100,7 +102,7 @@ class PeerEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getDynamic()
+    public function getDynamic(): string|int|bool|null
     {
         return $this->getKey('Dynamic');
     }
@@ -110,7 +112,7 @@ class PeerEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getNatSupport()
+    public function getNatSupport(): string|int|bool|null
     {
         return $this->getKey('NatSupport');
     }
@@ -120,7 +122,7 @@ class PeerEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getVideoSupport()
+    public function getVideoSupport(): string|int|bool|null
     {
         return $this->getKey('VideoSupport');
     }
@@ -130,7 +132,7 @@ class PeerEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getTextSupport()
+    public function getTextSupport(): string|int|bool|null
     {
         return $this->getKey('TextSupport');
     }
@@ -140,7 +142,7 @@ class PeerEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getACL()
+    public function getACL(): string|int|bool|null
     {
         return $this->getKey('ACL');
     }
@@ -150,7 +152,7 @@ class PeerEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getStatus()
+    public function getStatus(): string|int|bool|null
     {
         return $this->getKey('Status');
     }
@@ -160,7 +162,7 @@ class PeerEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getRealtimeDevice()
+    public function getRealtimeDevice(): string|int|bool|null
     {
         return $this->getKey('RealtimeDevice');
     }

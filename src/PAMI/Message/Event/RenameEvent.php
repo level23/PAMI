@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when renaming a channel.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -50,7 +52,7 @@ class RenameEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -60,27 +62,27 @@ class RenameEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannel()
+    public function getChannel(): string|int|bool|null
     {
         return $this->getKey('Channel');
     }
 
-     /**
-     * Returns key: 'Oldname'.
-     *
-     * @return string
-     */
-    public function getOldname()
+    /**
+    * Returns key: 'Oldname'.
+    *
+    * @return string
+    */
+    public function getOldname(): string|int|bool|null
     {
         return $this->getKey('Oldname');
     }
 
-   /**
-     * Returns key: 'Newname'.
-     *
-     * @return string
-     */
-    public function getNewname()
+    /**
+      * Returns key: 'Newname'.
+      *
+      * @return string
+      */
+    public function getNewname(): string|int|bool|null
     {
         return $this->getKey('Newname');
     }
@@ -90,7 +92,7 @@ class RenameEvent extends EventMessage
      *
      * @return string
      */
-    public function getUniqueID()
+    public function getUniqueID(): string|int|bool|null
     {
         return $this->getKey('UniqueID');
     }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when exchanging rtp stats.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -50,7 +52,7 @@ class RTCPReceivedEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -60,7 +62,7 @@ class RTCPReceivedEvent extends EventMessage
      *
      * @return string
      */
-    public function getFrom()
+    public function getFrom(): string|int|bool|null
     {
         return $this->getKey('From');
     }
@@ -70,7 +72,7 @@ class RTCPReceivedEvent extends EventMessage
      *
      * @return string
      */
-    public function getPT()
+    public function getPT(): string|int|bool|null
     {
         return $this->getKey('PT');
     }
@@ -80,7 +82,7 @@ class RTCPReceivedEvent extends EventMessage
      *
      * @return string
      */
-    public function getReceptionReports()
+    public function getReceptionReports(): string|int|bool|null
     {
         return $this->getKey('ReceptionReports');
     }
@@ -90,7 +92,7 @@ class RTCPReceivedEvent extends EventMessage
      *
      * @return string
      */
-    public function getSenderSSRC()
+    public function getSenderSSRC(): string|int|bool|null
     {
         return $this->getKey('SenderSSRC');
     }
@@ -100,7 +102,7 @@ class RTCPReceivedEvent extends EventMessage
      *
      * @return string
      */
-    public function getFractionLost()
+    public function getFractionLost(): string|int|bool|null
     {
         return $this->getKey('FractionLost');
     }
@@ -110,7 +112,7 @@ class RTCPReceivedEvent extends EventMessage
      *
      * @return string
      */
-    public function getPacketsLost()
+    public function getPacketsLost(): string|int|bool|null
     {
         return $this->getKey('PacketsLost');
     }
@@ -120,7 +122,7 @@ class RTCPReceivedEvent extends EventMessage
      *
      * @return string
      */
-    public function getHighestSequence()
+    public function getHighestSequence(): string|int|bool|null
     {
         return $this->getKey('HighestSequence');
     }
@@ -129,7 +131,7 @@ class RTCPReceivedEvent extends EventMessage
      *
      * @return string
      */
-    public function getSequenceNumberCycles()
+    public function getSequenceNumberCycles(): string|int|bool|null
     {
         return $this->getKey('SequenceNumberCycles');
     }
@@ -138,7 +140,7 @@ class RTCPReceivedEvent extends EventMessage
      *
      * @return string
      */
-    public function getIAJitter()
+    public function getIAJitter(): string|int|bool|null
     {
         return $this->getKey('IAJitter');
     }
@@ -147,7 +149,7 @@ class RTCPReceivedEvent extends EventMessage
      *
      * @return string
      */
-    public function getLastSR()
+    public function getLastSR(): string|int|bool|null
     {
         return $this->getKey('LastSR');
     }
@@ -156,7 +158,7 @@ class RTCPReceivedEvent extends EventMessage
      *
      * @return string
      */
-    public function getDLSR()
+    public function getDLSR(): string|int|bool|null
     {
         return $this->getKey('DLSR');
     }
@@ -165,7 +167,7 @@ class RTCPReceivedEvent extends EventMessage
      *
      * @return string
      */
-    public function getRTT()
+    public function getRTT(): string|int|bool|null
     {
         return $this->getKey('RTT');
     }
