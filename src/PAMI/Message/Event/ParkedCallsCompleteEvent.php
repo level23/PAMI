@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered for the end of the list when an action ParkedCalls
  * is issued.
@@ -28,6 +29,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;

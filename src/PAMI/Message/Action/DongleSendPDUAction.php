@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Send a PDU through dongle.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Action;
 
 /**

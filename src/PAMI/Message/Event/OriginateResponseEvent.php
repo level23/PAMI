@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Response from an async originate.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 /**
@@ -48,7 +50,7 @@ class OriginateResponseEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -58,7 +60,7 @@ class OriginateResponseEvent extends EventMessage
      *
      * @return string
      */
-    public function getExten()
+    public function getExten(): string|int|bool|null
     {
         return $this->getKey('Exten');
     }
@@ -68,7 +70,7 @@ class OriginateResponseEvent extends EventMessage
      *
      * @return string
      */
-    public function getContext()
+    public function getContext(): string|int|bool|null
     {
         return $this->getKey('Context');
     }
@@ -78,7 +80,7 @@ class OriginateResponseEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannel()
+    public function getChannel(): string|int|bool|null
     {
         return $this->getKey('Channel');
     }
@@ -88,7 +90,7 @@ class OriginateResponseEvent extends EventMessage
      *
      * @return string
      */
-    public function getReason()
+    public function getReason(): string|int|bool|null
     {
         return $this->getKey('Reason');
     }
@@ -98,15 +100,13 @@ class OriginateResponseEvent extends EventMessage
      *
      * @return string
      */
-    public function getUniqueID()
+    public function getUniqueID(): string|int|bool|null
     {
         return $this->getKey('UniqueID');
     }
 
     /**
      * Returns key: 'ActionID'.
-     *
-     * @return string
      */
     public function getActionID(): string
     {
@@ -118,7 +118,7 @@ class OriginateResponseEvent extends EventMessage
      *
      * @return string
      */
-    public function getResponse()
+    public function getResponse(): string|int|bool|null
     {
         return $this->getKey('Response');
     }
@@ -128,7 +128,7 @@ class OriginateResponseEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerIdNum()
+    public function getCallerIdNum(): string|int|bool|null
     {
         return $this->getKey('CallerIdNum');
     }
@@ -138,7 +138,7 @@ class OriginateResponseEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerIdName()
+    public function getCallerIdName(): string|int|bool|null
     {
         return $this->getKey('CallerIdName');
     }

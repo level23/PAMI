@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This class will test some events.
  *
@@ -30,6 +31,7 @@
 
 namespace Tests;
 
+use PAMI\Client\Exception\ClientException;
 use Mockery;
 use PAMI\Stream\Stream;
 use PAMI\Client\Impl\ClientImpl;
@@ -1583,17 +1585,18 @@ class EventsTest extends MockeryTestCase
     }
 
     /**
-     * @param string                               $eventName
      * @param array<string, array<string, string>> $getters
      * @param array<string, int|string>            $values
      * @param array<string, array<string, true>>   $translatedValues
-     *
-     * @throws \PAMI\Client\Exception\ClientException
+     * @throws ClientException
      */
     private function testEvent(string $eventName, array $getters, array $values, array $translatedValues): void
     {
-        $eventClass = "PAMI\\Message\\Event\\" . str_replace(' ', '',
-                ucwords(str_replace('_', ' ', $eventName))) . 'Event';
+        $eventClass = "PAMI\\Message\\Event\\" . str_replace(
+            ' ',
+            '',
+            ucwords(str_replace('_', ' ', $eventName))
+        ) . 'Event';
 
         $options = [
             'host'         => '2.3.4.5',
@@ -1649,7 +1652,7 @@ class EventsTest extends MockeryTestCase
 
         $client->open();
 
-        $client->registerEventListener(new SomeListenerClass);
+        $client->registerEventListener(new SomeListenerClass());
 
         $message   = [];
         $message[] = 'Event: ' . $eventName . "\r\n";
@@ -1680,7 +1683,7 @@ class EventsTest extends MockeryTestCase
                 sprintf(
                     "Method %s doesn't exist in event %s. Data: %s. Messages:\r\n%s",
                     $methodName,
-                    get_class($event),
+                    $event !== null ? $event::class : self::class,
                     var_export(func_get_args(), true),
                     implode("", $message)
                 )
@@ -1689,6 +1692,6 @@ class EventsTest extends MockeryTestCase
             $this->assertEquals($event->$methodName(), $value, $eventName);
         }
 
-        $this->assertEquals($eventClass, get_class($event));
+        $this->assertEquals($eventClass, $event !== null ? $event::class : self::class);
     }
 }

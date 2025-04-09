@@ -1,4 +1,5 @@
 <?php
+
 /**
  * A generic action ami message.
  *
@@ -69,7 +70,6 @@ abstract class ActionMessage extends OutgoingMessage
      *
      * @param string $actionID The Action ID to have this action known by
      *
-     * @return void
      * @throws PAMIException When the ActionID is more than 69 characters long
      */
     public function setActionID($actionID): void

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This factory knows which event to return according to a given raw message
  * from ami.
@@ -28,6 +29,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event\Factory\Impl;
 
 use PAMI\Message\Message;
@@ -53,8 +55,6 @@ class EventFactoryImpl
      * This is our factory method.
      *
      * @param string $message Literal message as received from ami.
-     *
-     * @return EventMessage
      */
     public static function createFromRaw(string $message): EventMessage
     {
@@ -75,14 +75,5 @@ class EventFactoryImpl
             return new $className($message);
         }
         return new UnknownEvent($message);
-    }
-
-    /**
-     * Constructor. Nothing to see here, move along.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
     }
 }

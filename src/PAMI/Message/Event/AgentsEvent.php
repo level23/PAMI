@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered for agents.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 /**
@@ -48,7 +50,7 @@ class AgentsEvent extends EventMessage
      *
      * @return string
      */
-    public function getStatus()
+    public function getStatus(): string|int|bool|null
     {
         return $this->getKey('Status');
     }
@@ -58,7 +60,7 @@ class AgentsEvent extends EventMessage
      *
      * @return string
      */
-    public function getAgent()
+    public function getAgent(): string|int|bool|null
     {
         return $this->getKey('Agent');
     }
@@ -68,7 +70,7 @@ class AgentsEvent extends EventMessage
      *
      * @return string
      */
-    public function getName()
+    public function getName(): string|int|bool|null
     {
         return $this->getKey('Name');
     }
@@ -78,7 +80,7 @@ class AgentsEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannel()
+    public function getChannel(): string|int|bool|null
     {
         return $this->getKey('LoggedInChan');
     }
@@ -88,7 +90,7 @@ class AgentsEvent extends EventMessage
      *
      * @return string
      */
-    public function getLoggedInTime()
+    public function getLoggedInTime(): string|int|bool|null
     {
         return $this->getKey('LoggedInTime');
     }
@@ -98,7 +100,7 @@ class AgentsEvent extends EventMessage
      *
      * @return string
      */
-    public function getTalkingTo()
+    public function getTalkingTo(): string|int|bool|null
     {
         return $this->getKey('TalkingTo');
     }
@@ -108,7 +110,7 @@ class AgentsEvent extends EventMessage
      *
      * @return string
      */
-    public function getTalkingToChannel()
+    public function getTalkingToChannel(): string|int|bool|null
     {
         return $this->getKey('TalkingToChannel');
     }

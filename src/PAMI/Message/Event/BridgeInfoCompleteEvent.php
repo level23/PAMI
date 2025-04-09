@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered for the end of the list when an action BridgeInfo is issued.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 /**
@@ -48,7 +50,7 @@ class BridgeInfoCompleteEvent extends EventMessage
      *
      * @return string
      */
-    public function getBridgeUniqueid()
+    public function getBridgeUniqueid(): string|int|bool|null
     {
         return $this->getKey('BridgeUniqueid');
     }
@@ -58,7 +60,7 @@ class BridgeInfoCompleteEvent extends EventMessage
      *
      * @return string
      */
-    public function getBridgeType()
+    public function getBridgeType(): string|int|bool|null
     {
         return $this->getKey('BridgeType');
     }
@@ -68,7 +70,7 @@ class BridgeInfoCompleteEvent extends EventMessage
      *
      * @return string
      */
-    public function getBridgeTechnology()
+    public function getBridgeTechnology(): string|int|bool|null
     {
         return $this->getKey('BridgeTechnology');
     }
@@ -78,7 +80,7 @@ class BridgeInfoCompleteEvent extends EventMessage
      *
      * @return string
      */
-    public function getBridgeCreator()
+    public function getBridgeCreator(): string|int|bool|null
     {
         return $this->getKey('BridgeCreator');
     }
@@ -88,7 +90,7 @@ class BridgeInfoCompleteEvent extends EventMessage
      *
      * @return string
      */
-    public function getBridgeName()
+    public function getBridgeName(): string|int|bool|null
     {
         return $this->getKey('BridgeName');
     }
@@ -98,7 +100,7 @@ class BridgeInfoCompleteEvent extends EventMessage
      *
      * @return string
      */
-    public function getBridgeNumChannels()
+    public function getBridgeNumChannels(): string|int|bool|null
     {
         return $this->getKey('BridgeNumChannels');
     }
@@ -108,7 +110,7 @@ class BridgeInfoCompleteEvent extends EventMessage
      *
      * @return string
      */
-    public function getBridgeVideoSourceMode()
+    public function getBridgeVideoSourceMode(): string|int|bool|null
     {
         return $this->getKey('BridgeVideoSourceMode');
     }
@@ -118,7 +120,7 @@ class BridgeInfoCompleteEvent extends EventMessage
      *
      * @return string
      */
-    public function getBridgeVideoSource()
+    public function getBridgeVideoSource(): string|int|bool|null
     {
         return $this->getKey('BridgeVideoSource');
     }

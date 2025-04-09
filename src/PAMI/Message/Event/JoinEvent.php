@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when .. ?
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -50,7 +52,7 @@ class JoinEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -60,7 +62,7 @@ class JoinEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannel()
+    public function getChannel(): string|int|bool|null
     {
         return $this->getKey('Channel');
     }
@@ -70,7 +72,7 @@ class JoinEvent extends EventMessage
      *
      * @return string
      */
-    public function getCount()
+    public function getCount(): string|int|bool|null
     {
         return $this->getKey('Count');
     }
@@ -80,7 +82,7 @@ class JoinEvent extends EventMessage
      *
      * @return string
      */
-    public function getQueue()
+    public function getQueue(): string|int|bool|null
     {
         return $this->getKey('Queue');
     }
@@ -90,7 +92,7 @@ class JoinEvent extends EventMessage
      *
      * @return string
      */
-    public function getPosition()
+    public function getPosition(): string|int|bool|null
     {
         return $this->getKey('Position');
     }
@@ -100,7 +102,7 @@ class JoinEvent extends EventMessage
      *
      * @return string
      */
-    public function getUniqueID()
+    public function getUniqueID(): string|int|bool|null
     {
         return $this->getKey('UniqueID');
     }
@@ -110,7 +112,7 @@ class JoinEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerIdNum()
+    public function getCallerIdNum(): string|int|bool|null
     {
         return $this->getKey('CallerIdNum');
     }
@@ -120,7 +122,7 @@ class JoinEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerIdName()
+    public function getCallerIdName(): string|int|bool|null
     {
         return $this->getKey('CallerIdName');
     }

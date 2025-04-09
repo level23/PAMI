@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when an agent logs off.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 /**
@@ -48,7 +50,7 @@ class AgentlogoffEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -58,7 +60,7 @@ class AgentlogoffEvent extends EventMessage
      *
      * @return string
      */
-    public function getAgent()
+    public function getAgent(): string|int|bool|null
     {
         return $this->getKey('Agent');
     }
@@ -68,7 +70,7 @@ class AgentlogoffEvent extends EventMessage
      *
      * @return string
      */
-    public function getUniqueID()
+    public function getUniqueID(): string|int|bool|null
     {
         return $this->getKey('UniqueID');
     }
@@ -78,7 +80,7 @@ class AgentlogoffEvent extends EventMessage
      *
      * @return string
      */
-    public function getLogintime()
+    public function getLogintime(): string|int|bool|null
     {
         return $this->getKey('Logintime');
     }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when a channel updated its status.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -50,7 +52,7 @@ class ChannelUpdateEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -60,7 +62,7 @@ class ChannelUpdateEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannel()
+    public function getChannel(): string|int|bool|null
     {
         return $this->getKey('Channel');
     }
@@ -70,7 +72,7 @@ class ChannelUpdateEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannelType()
+    public function getChannelType(): string|int|bool|null
     {
         return $this->getKey('ChannelType');
     }
@@ -80,7 +82,7 @@ class ChannelUpdateEvent extends EventMessage
      *
      * @return string
      */
-    public function getSIPCallID()
+    public function getSIPCallID(): string|int|bool|null
     {
         return $this->getKey('SIPcallid');
     }
@@ -90,7 +92,7 @@ class ChannelUpdateEvent extends EventMessage
      *
      * @return string
      */
-    public function getSIPFullContact()
+    public function getSIPFullContact(): string|int|bool|null
     {
         return $this->getKey('SIPfullcontact');
     }
@@ -100,7 +102,7 @@ class ChannelUpdateEvent extends EventMessage
      *
      * @return string
      */
-    public function getUniqueID()
+    public function getUniqueID(): string|int|bool|null
     {
         return $this->getKey('UniqueID');
     }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Triggered when?
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -50,7 +52,7 @@ class NewAccountCodeEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -60,7 +62,7 @@ class NewAccountCodeEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannel()
+    public function getChannel(): string|int|bool|null
     {
         return $this->getKey('Channel');
     }
@@ -70,7 +72,7 @@ class NewAccountCodeEvent extends EventMessage
      *
      * @return string
      */
-    public function getUniqueID()
+    public function getUniqueID(): string|int|bool|null
     {
         return $this->getKey('UniqueID');
     }
@@ -80,7 +82,7 @@ class NewAccountCodeEvent extends EventMessage
      *
      * @return string
      */
-    public function getAccountCode()
+    public function getAccountCode(): string|int|bool|null
     {
         return $this->getKey('AccountCode');
     }
@@ -90,7 +92,7 @@ class NewAccountCodeEvent extends EventMessage
      *
      * @return string
      */
-    public function getOldAccountCode()
+    public function getOldAccountCode(): string|int|bool|null
     {
         return $this->getKey('OldAccountCode');
     }

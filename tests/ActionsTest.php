@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This class will test some actions.
  *
@@ -30,6 +31,7 @@
 
 namespace Tests;
 
+use PAMI\Client\Exception\ClientException;
 use Mockery;
 use PAMI\Stream\Stream;
 use Psr\Log\LoggerInterface;
@@ -161,10 +163,8 @@ class ActionsTest extends MockeryTestCase
 
     /**
      * @param array<int,string>                  $expectedWrite
-     * @param \PAMI\Message\Action\ActionMessage $action
      *
-     * @return void
-     * @throws \PAMI\Client\Exception\ClientException
+     * @throws ClientException
      */
     protected function testSendAction(array $expectedWrite, ActionMessage $action): void
     {
@@ -200,10 +200,7 @@ class ActionsTest extends MockeryTestCase
 
         $logger->shouldReceive('debug')
             ->zeroOrMoreTimes()
-            ->withArgs(function (string $message) {
-
-                return str_starts_with($message, '------ Sending: ------');
-            });
+            ->withArgs(fn (string $message): bool => str_starts_with($message, '------ Sending: ------'));
 
         $stream->shouldReceive('write')
             ->once()
@@ -212,10 +209,7 @@ class ActionsTest extends MockeryTestCase
 
         $logger->shouldReceive('debug')
             ->zeroOrMoreTimes()
-            ->withArgs(function (string $message) {
-
-                return str_starts_with($message, '------ Received: ------') || $message == '----------------';
-            });
+            ->withArgs(fn (string $message): bool => str_starts_with($message, '------ Received: ------') || $message == '----------------');
 
         $stream->shouldReceive('read')
             ->times(5)
@@ -239,9 +233,7 @@ class ActionsTest extends MockeryTestCase
 
         $logger->shouldReceive('debug')
             ->once()
-            ->withArgs(function (string $message) {
-                return 'Logged in successfully to ami.' == $message;
-            });
+            ->withArgs(fn (string $message): bool => 'Logged in successfully to ami.' == $message);
 
         $client->open();
 
@@ -349,7 +341,7 @@ class ActionsTest extends MockeryTestCase
                 '',
             ]),
         ];
-        $action = new AgentsAction;
+        $action = new AgentsAction();
         $this->testSendAction($write, $action);
     }
 
@@ -516,7 +508,7 @@ class ActionsTest extends MockeryTestCase
                 '',
             ]),
         ];
-        $action = new CoreSettingsAction;
+        $action = new CoreSettingsAction();
         $this->testSendAction($write, $action);
     }
 
@@ -529,7 +521,7 @@ class ActionsTest extends MockeryTestCase
                 '',
             ]),
         ];
-        $action = new DongleShowDevicesAction;
+        $action = new DongleShowDevicesAction();
         $this->testSendAction($write, $action);
     }
 
@@ -660,7 +652,7 @@ class ActionsTest extends MockeryTestCase
                 '',
             ]),
         ];
-        $action = new CoreStatusAction;
+        $action = new CoreStatusAction();
         $this->testSendAction($write, $action);
     }
 
@@ -744,7 +736,7 @@ class ActionsTest extends MockeryTestCase
                 '',
             ]),
         ];
-        $action = new DAHDIRestartAction;
+        $action = new DAHDIRestartAction();
         $this->testSendAction($write, $action);
     }
 
@@ -757,7 +749,7 @@ class ActionsTest extends MockeryTestCase
                 '',
             ]),
         ];
-        $action = new DAHDIShowChannelsAction;
+        $action = new DAHDIShowChannelsAction();
         $this->testSendAction($write, $action);
     }
 
@@ -846,7 +838,7 @@ class ActionsTest extends MockeryTestCase
                 '',
             ]),
         ];
-        $action = new EventsAction;
+        $action = new EventsAction();
         $this->testSendAction($write, $action);
     }
 
@@ -992,7 +984,7 @@ class ActionsTest extends MockeryTestCase
                 '',
             ]),
         ];
-        $action = new ListCommandsAction;
+        $action = new ListCommandsAction();
         $this->testSendAction($write, $action);
     }
 
@@ -1185,7 +1177,7 @@ class ActionsTest extends MockeryTestCase
                 '',
             ]),
         ];
-        $action = new VoicemailUsersListAction;
+        $action = new VoicemailUsersListAction();
         $this->testSendAction($write, $action);
     }
 
@@ -1315,7 +1307,7 @@ class ActionsTest extends MockeryTestCase
                 '',
             ]),
         ];
-        $action = new PingAction;
+        $action = new PingAction();
         $this->testSendAction($write, $action);
     }
 
@@ -1343,7 +1335,7 @@ class ActionsTest extends MockeryTestCase
                 '',
             ]),
         ];
-        $action = new SIPShowRegistryAction;
+        $action = new SIPShowRegistryAction();
         $this->testSendAction($write, $action);
     }
 
@@ -1356,7 +1348,7 @@ class ActionsTest extends MockeryTestCase
                 '',
             ]),
         ];
-        $action = new SIPPeersAction;
+        $action = new SIPPeersAction();
         $this->testSendAction($write, $action);
     }
 
@@ -1421,7 +1413,7 @@ class ActionsTest extends MockeryTestCase
                 '',
             ]),
         ];
-        $action = new VGSMSMSTxAction;
+        $action = new VGSMSMSTxAction();
         $action->setAccount('account');
         $action->setConcatTotalMsg('totalmsg');
         $action->setConcatSeqNum('seqnum');
@@ -1444,7 +1436,7 @@ class ActionsTest extends MockeryTestCase
                 '',
             ]),
         ];
-        $action = new ParkedCallsAction;
+        $action = new ParkedCallsAction();
         $this->testSendAction($write, $action);
     }
 
@@ -1457,7 +1449,7 @@ class ActionsTest extends MockeryTestCase
                 '',
             ]),
         ];
-        $action = new QueuesAction;
+        $action = new QueuesAction();
         $this->testSendAction($write, $action);
     }
 
@@ -1888,4 +1880,3 @@ class ActionsTest extends MockeryTestCase
         $this->testSendAction($writeDelete, $actionDelete);
     }
 }
-

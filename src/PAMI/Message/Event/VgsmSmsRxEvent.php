@@ -1,4 +1,5 @@
 <?php
+
 /**
  * On reception of an inbound SMS (SMS-DELIVERY) the message will also be
  * reported as a manager event, however, acknowledgment still relies on SMS
@@ -29,6 +30,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -54,7 +56,7 @@ class VgsmSmsRxEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -64,7 +66,7 @@ class VgsmSmsRxEvent extends EventMessage
      *
      * @return string
      */
-    public function getReceived()
+    public function getReceived(): string|int|bool|null
     {
         return $this->getKey('Received');
     }
@@ -74,7 +76,7 @@ class VgsmSmsRxEvent extends EventMessage
      *
      * @return string
      */
-    public function getFrom()
+    public function getFrom(): string|int|bool|null
     {
         return $this->getKey('From');
     }
@@ -84,7 +86,7 @@ class VgsmSmsRxEvent extends EventMessage
      *
      * @return string
      */
-    public function getSubject()
+    public function getSubject(): string|int|bool|null
     {
         return $this->getKey('Subject');
     }
@@ -94,7 +96,7 @@ class VgsmSmsRxEvent extends EventMessage
      *
      * @return string
      */
-    public function getMimeVersion()
+    public function getMimeVersion(): string|int|bool|null
     {
         return $this->getKey('MIME-Version');
     }
@@ -104,7 +106,7 @@ class VgsmSmsRxEvent extends EventMessage
      *
      * @return string
      */
-    public function getContentType()
+    public function getContentType(): string|int|bool|null
     {
         return $this->getKey('Content-Type');
     }
@@ -114,7 +116,7 @@ class VgsmSmsRxEvent extends EventMessage
      *
      * @return string
      */
-    public function getContentEncoding()
+    public function getContentEncoding(): string|int|bool|null
     {
         return $this->getKey('Content-Transfer-Encoding');
     }
@@ -124,7 +126,7 @@ class VgsmSmsRxEvent extends EventMessage
      *
      * @return string
      */
-    public function getDate()
+    public function getDate(): string|int|bool|null
     {
         return $this->getKey('Date');
     }
@@ -134,7 +136,7 @@ class VgsmSmsRxEvent extends EventMessage
      *
      * @return string
      */
-    public function getContent()
+    public function getContent(): string|int|bool|null
     {
         return $this->getKey('Content');
     }
@@ -144,7 +146,7 @@ class VgsmSmsRxEvent extends EventMessage
      *
      * @return string
      */
-    public function getMessageType()
+    public function getMessageType(): string|int|bool|null
     {
         return $this->getKey('X-SMS-Message-Type');
     }
@@ -154,7 +156,7 @@ class VgsmSmsRxEvent extends EventMessage
      *
      * @return string
      */
-    public function getSenderNP()
+    public function getSenderNP(): string|int|bool|null
     {
         return $this->getKey('X-SMS-Sender-NP');
     }
@@ -164,7 +166,7 @@ class VgsmSmsRxEvent extends EventMessage
      *
      * @return string
      */
-    public function getSenderTON()
+    public function getSenderTON(): string|int|bool|null
     {
         return $this->getKey('X-SMS-Sender-TON');
     }
@@ -174,7 +176,7 @@ class VgsmSmsRxEvent extends EventMessage
      *
      * @return string
      */
-    public function getSenderNumber()
+    public function getSenderNumber(): string|int|bool|null
     {
         return $this->getKey('X-SMS-Sender-Number');
     }
@@ -184,7 +186,7 @@ class VgsmSmsRxEvent extends EventMessage
      *
      * @return string
      */
-    public function getSMCCNP()
+    public function getSMCCNP(): string|int|bool|null
     {
         return $this->getKey('X-SMS-SMCC-NP');
     }
@@ -194,7 +196,7 @@ class VgsmSmsRxEvent extends EventMessage
      *
      * @return string
      */
-    public function getSMCCTON()
+    public function getSMCCTON(): string|int|bool|null
     {
         return $this->getKey('X-SMS-SMCC-TON');
     }
@@ -204,7 +206,7 @@ class VgsmSmsRxEvent extends EventMessage
      *
      * @return string
      */
-    public function getSMCCNumber()
+    public function getSMCCNumber(): string|int|bool|null
     {
         return $this->getKey('X-SMS-SMCC-Number');
     }
@@ -214,7 +216,7 @@ class VgsmSmsRxEvent extends EventMessage
      *
      * @return string
      */
-    public function getMoreMessagesToSend()
+    public function getMoreMessagesToSend(): string|int|bool|null
     {
         return $this->getKey('X-SMS-More-Messages-To-Send');
     }
@@ -224,7 +226,7 @@ class VgsmSmsRxEvent extends EventMessage
      *
      * @return string
      */
-    public function getReplyPath()
+    public function getReplyPath(): string|int|bool|null
     {
         return $this->getKey('X-SMS-Reply-Path');
     }
@@ -234,7 +236,7 @@ class VgsmSmsRxEvent extends EventMessage
      *
      * @return string
      */
-    public function getDataHeaderIndicator()
+    public function getDataHeaderIndicator(): string|int|bool|null
     {
         return $this->getKey('X-SMS-User-Data-Header-Indicator');
     }
@@ -244,7 +246,7 @@ class VgsmSmsRxEvent extends EventMessage
      *
      * @return string
      */
-    public function getStatusReportIndication()
+    public function getStatusReportIndication(): string|int|bool|null
     {
         return $this->getKey('X-SMS-Status-Report-Indication');
     }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered for Jabber Activity. A contribution from
  * Richard Baar.
@@ -28,6 +29,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -51,7 +53,7 @@ class JabberEventEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -61,7 +63,7 @@ class JabberEventEvent extends EventMessage
      *
      * @return string
      */
-    public function getAccount()
+    public function getAccount(): string|int|bool|null
     {
         return $this->getKey('Account');
     }
@@ -71,7 +73,7 @@ class JabberEventEvent extends EventMessage
      *
      * @return string
      */
-    public function getPacket()
+    public function getPacket(): string|int|bool|null
     {
         return $this->getKey('Packet');
     }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Starts a dongle.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Action;
 
 /**

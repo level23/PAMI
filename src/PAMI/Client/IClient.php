@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Interface for an ami client.
  *
@@ -29,6 +30,7 @@
 
 namespace PAMI\Client;
 
+use PAMI\Client\Exception\ClientException;
 use Psr\Log\LoggerInterface;
 use PAMI\Message\OutgoingMessage;
 use PAMI\Listener\IEventListener;
@@ -52,7 +54,7 @@ interface IClient
      * Opens a tcp connection to ami.
      *
      * @return void
-     * @throws \PAMI\Client\Exception\ClientException
+     * @throws ClientException
      */
     public function open();
 
@@ -71,10 +73,7 @@ interface IClient
      * and an array containing the object and name of the method to invoke. Can specify
      * an optional predicate to invoke before calling the callback.
      *
-     * @param callable|IEventListener $listener
-     * @param callable|null           $predicate
      *
-     * @return string
      */
     public function registerEventListener(callable|IEventListener $listener, ?callable $predicate = null): string;
 
@@ -82,15 +81,11 @@ interface IClient
      * Unregisters an event listener.
      *
      * @param string $listenerId The id returned by registerEventListener.
-     *
-     * @return void
      */
     public function unregisterEventListener(string $listenerId): void;
 
     /**
      * Closes the connection to ami.
-     *
-     * @return void
      */
     public function close(): void;
 
@@ -99,8 +94,7 @@ interface IClient
      *
      * @param OutgoingMessage $message Message to send.
      *
-     * @return \PAMI\Message\Response\ResponseMessage
-     * @throws \PAMI\Client\Exception\ClientException
+     * @throws ClientException
      * @see ClientImpl::send()
      */
     public function send(OutgoingMessage $message): ResponseMessage;
@@ -108,9 +102,7 @@ interface IClient
     /**
      * Sets the logger implementation.
      *
-     * @param \Psr\Log\LoggerInterface $logger The PSR3-Logger
-     *
-     * @return void
+     * @param LoggerInterface $logger The PSR3-Logger
      */
     public function setLogger(LoggerInterface $logger): void;
 }

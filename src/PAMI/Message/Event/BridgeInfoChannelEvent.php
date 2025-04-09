@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when an action BridgeInfo is issued.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 /**
@@ -48,7 +50,7 @@ class BridgeInfoChannelEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannel()
+    public function getChannel(): string|int|bool|null
     {
         return $this->getKey('Channel');
     }
@@ -58,7 +60,7 @@ class BridgeInfoChannelEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannelState()
+    public function getChannelState(): string|int|bool|null
     {
         return $this->getKey('ChannelState');
     }
@@ -68,7 +70,7 @@ class BridgeInfoChannelEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannelStateDesc()
+    public function getChannelStateDesc(): string|int|bool|null
     {
         return $this->getKey('ChannelStateDesc');
     }
@@ -78,7 +80,7 @@ class BridgeInfoChannelEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerIDNum()
+    public function getCallerIDNum(): string|int|bool|null
     {
         return $this->getKey('CallerIDNum');
     }
@@ -88,7 +90,7 @@ class BridgeInfoChannelEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerIDName()
+    public function getCallerIDName(): string|int|bool|null
     {
         return $this->getKey('CallerIDName');
     }
@@ -98,7 +100,7 @@ class BridgeInfoChannelEvent extends EventMessage
      *
      * @return string
      */
-    public function getConnectedLineNum()
+    public function getConnectedLineNum(): string|int|bool|null
     {
         return $this->getKey('ConnectedLineNum');
     }
@@ -108,7 +110,7 @@ class BridgeInfoChannelEvent extends EventMessage
      *
      * @return string
      */
-    public function getConnectedLineName()
+    public function getConnectedLineName(): string|int|bool|null
     {
         return $this->getKey('ConnectedLineName');
     }
@@ -118,7 +120,7 @@ class BridgeInfoChannelEvent extends EventMessage
      *
      * @return string
      */
-    public function getAccountCode()
+    public function getAccountCode(): string|int|bool|null
     {
         return $this->getKey('AccountCode');
     }
@@ -128,7 +130,7 @@ class BridgeInfoChannelEvent extends EventMessage
      *
      * @return string
      */
-    public function getContext()
+    public function getContext(): string|int|bool|null
     {
         return $this->getKey('Context');
     }
@@ -138,7 +140,7 @@ class BridgeInfoChannelEvent extends EventMessage
      *
      * @return string
      */
-    public function getExten()
+    public function getExten(): string|int|bool|null
     {
         return $this->getKey('Exten');
     }
@@ -148,7 +150,7 @@ class BridgeInfoChannelEvent extends EventMessage
      *
      * @return string
      */
-    public function getPriority()
+    public function getPriority(): string|int|bool|null
     {
         return $this->getKey('Priority');
     }
@@ -158,7 +160,7 @@ class BridgeInfoChannelEvent extends EventMessage
      *
      * @return string
      */
-    public function getUniqueid()
+    public function getUniqueid(): string|int|bool|null
     {
         return $this->getKey('Uniqueid');
     }
@@ -168,7 +170,7 @@ class BridgeInfoChannelEvent extends EventMessage
      *
      * @return string
      */
-    public function getLinkedid()
+    public function getLinkedid(): string|int|bool|null
     {
         return $this->getKey('Linkedid');
     }

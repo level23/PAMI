@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Registry event.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -50,7 +52,7 @@ class RegistryEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannel()
+    public function getChannel(): string|int|bool|null
     {
         return $this->getKey('Channel');
     }
@@ -60,7 +62,7 @@ class RegistryEvent extends EventMessage
      *
      * @return string
      */
-    public function getDomain()
+    public function getDomain(): string|int|bool|null
     {
         return $this->getKey('Domain');
     }
@@ -70,7 +72,7 @@ class RegistryEvent extends EventMessage
      *
      * @return string
      */
-    public function getStatus()
+    public function getStatus(): string|int|bool|null
     {
         return $this->getKey('Status');
     }

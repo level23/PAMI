@@ -1,4 +1,5 @@
 <?php
+
 /**
  * QueueStatus action message.
  *

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when an async agi is executed.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -50,7 +52,7 @@ class AsyncAGIEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -60,7 +62,7 @@ class AsyncAGIEvent extends EventMessage
      *
      * @return string
      */
-    public function getSubEvent()
+    public function getSubEvent(): string|int|bool|null
     {
         return $this->getKey('SubEvent');
     }
@@ -70,7 +72,7 @@ class AsyncAGIEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannel()
+    public function getChannel(): string|int|bool|null
     {
         return $this->getKey('Channel');
     }
@@ -80,7 +82,7 @@ class AsyncAGIEvent extends EventMessage
      *
      * @return string
      */
-    public function getEnvironment()
+    public function getEnvironment(): string|int|bool|null
     {
         return $this->getKey('Env');
     }
@@ -90,7 +92,7 @@ class AsyncAGIEvent extends EventMessage
      *
      * @return string
      */
-    public function getResult()
+    public function getResult(): string|int|bool|null
     {
         return $this->getKey('Result');
     }
@@ -100,7 +102,7 @@ class AsyncAGIEvent extends EventMessage
      *
      * @return string
      */
-    public function getCommandId()
+    public function getCommandId(): string|int|bool|null
     {
         return $this->getKey('CommandId');
     }
@@ -111,7 +113,7 @@ class AsyncAGIEvent extends EventMessage
      *
      * @return void
      */
-    public function __construct($rawContent)
+    public function __construct(string $rawContent)
     {
         parent::__construct($rawContent);
         $this->setKey('Env', urldecode($this->getEnvironment()));

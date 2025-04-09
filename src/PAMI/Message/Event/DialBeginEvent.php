@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when a dial action has started.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 /**
@@ -48,7 +50,7 @@ class DialBeginEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -58,7 +60,7 @@ class DialBeginEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannel()
+    public function getChannel(): string|int|bool|null
     {
         return $this->getKey('Channel');
     }
@@ -68,7 +70,7 @@ class DialBeginEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannelState()
+    public function getChannelState(): string|int|bool|null
     {
         return $this->getKey('ChannelState');
     }
@@ -78,7 +80,7 @@ class DialBeginEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannelStateDesc()
+    public function getChannelStateDesc(): string|int|bool|null
     {
         return $this->getKey('ChannelStateDesc');
     }
@@ -88,7 +90,7 @@ class DialBeginEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerIDNum()
+    public function getCallerIDNum(): string|int|bool|null
     {
         return $this->getKey('CallerIDNum');
     }
@@ -98,7 +100,7 @@ class DialBeginEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerIDName()
+    public function getCallerIDName(): string|int|bool|null
     {
         return $this->getKey('CallerIDName');
     }
@@ -108,7 +110,7 @@ class DialBeginEvent extends EventMessage
      *
      * @return string
      */
-    public function getConnectedLineNum()
+    public function getConnectedLineNum(): string|int|bool|null
     {
         return $this->getKey('ConnectedLineNum');
     }
@@ -118,7 +120,7 @@ class DialBeginEvent extends EventMessage
      *
      * @return string
      */
-    public function getConnectedLineName()
+    public function getConnectedLineName(): string|int|bool|null
     {
         return $this->getKey('ConnectedLineName');
     }
@@ -128,7 +130,7 @@ class DialBeginEvent extends EventMessage
      *
      * @return string
      */
-    public function getAccountCode()
+    public function getAccountCode(): string|int|bool|null
     {
         return $this->getKey('AccountCode');
     }
@@ -138,7 +140,7 @@ class DialBeginEvent extends EventMessage
      *
      * @return string
      */
-    public function getContext()
+    public function getContext(): string|int|bool|null
     {
         return $this->getKey('Context');
     }
@@ -148,7 +150,7 @@ class DialBeginEvent extends EventMessage
      *
      * @return string
      */
-    public function getExten()
+    public function getExten(): string|int|bool|null
     {
         return $this->getKey('Exten');
     }
@@ -158,7 +160,7 @@ class DialBeginEvent extends EventMessage
      *
      * @return string
      */
-    public function getPriority()
+    public function getPriority(): string|int|bool|null
     {
         return $this->getKey('Priority');
     }
@@ -168,7 +170,7 @@ class DialBeginEvent extends EventMessage
      *
      * @return string
      */
-    public function getUniqueid()
+    public function getUniqueid(): string|int|bool|null
     {
         return $this->getKey('Uniqueid');
     }
@@ -178,7 +180,7 @@ class DialBeginEvent extends EventMessage
      *
      * @return string
      */
-    public function getDestChannel()
+    public function getDestChannel(): string|int|bool|null
     {
         return $this->getKey('DestChannel');
     }
@@ -188,7 +190,7 @@ class DialBeginEvent extends EventMessage
      *
      * @return string
      */
-    public function getDestChannelState()
+    public function getDestChannelState(): string|int|bool|null
     {
         return $this->getKey('DestChannelState');
     }
@@ -198,7 +200,7 @@ class DialBeginEvent extends EventMessage
      *
      * @return string
      */
-    public function getDestChannelStateDesc()
+    public function getDestChannelStateDesc(): string|int|bool|null
     {
         return $this->getKey('DestChannelStateDesc');
     }
@@ -208,7 +210,7 @@ class DialBeginEvent extends EventMessage
      *
      * @return string
      */
-    public function getDestCallerIDNum()
+    public function getDestCallerIDNum(): string|int|bool|null
     {
         return $this->getKey('DestCallerIDNum');
     }
@@ -218,7 +220,7 @@ class DialBeginEvent extends EventMessage
      *
      * @return string
      */
-    public function getDestCallerIDName()
+    public function getDestCallerIDName(): string|int|bool|null
     {
         return $this->getKey('DestCallerIDName');
     }
@@ -228,7 +230,7 @@ class DialBeginEvent extends EventMessage
      *
      * @return string
      */
-    public function getDestConnectedLineNum()
+    public function getDestConnectedLineNum(): string|int|bool|null
     {
         return $this->getKey('DestConnectedLineNum');
     }
@@ -238,7 +240,7 @@ class DialBeginEvent extends EventMessage
      *
      * @return string
      */
-    public function getDestConnectedLineName()
+    public function getDestConnectedLineName(): string|int|bool|null
     {
         return $this->getKey('DestConnectedLineName');
     }
@@ -248,7 +250,7 @@ class DialBeginEvent extends EventMessage
      *
      * @return string
      */
-    public function getDestAccountCode()
+    public function getDestAccountCode(): string|int|bool|null
     {
         return $this->getKey('DestAccountCode');
     }
@@ -258,7 +260,7 @@ class DialBeginEvent extends EventMessage
      *
      * @return string
      */
-    public function getDestContext()
+    public function getDestContext(): string|int|bool|null
     {
         return $this->getKey('DestContext');
     }
@@ -268,7 +270,7 @@ class DialBeginEvent extends EventMessage
      *
      * @return string
      */
-    public function getDestExten()
+    public function getDestExten(): string|int|bool|null
     {
         return $this->getKey('DestExten');
     }
@@ -278,7 +280,7 @@ class DialBeginEvent extends EventMessage
      *
      * @return string
      */
-    public function getDestPriority()
+    public function getDestPriority(): string|int|bool|null
     {
         return $this->getKey('DestPriority');
     }
@@ -288,7 +290,7 @@ class DialBeginEvent extends EventMessage
      *
      * @return string
      */
-    public function getDestUniqueid()
+    public function getDestUniqueid(): string|int|bool|null
     {
         return $this->getKey('DestUniqueid');
     }
@@ -298,7 +300,7 @@ class DialBeginEvent extends EventMessage
      *
      * @return string
      */
-    public function getDialStatus()
+    public function getDialStatus(): string|int|bool|null
     {
         return $this->getKey('DialStatus');
     }
@@ -308,7 +310,7 @@ class DialBeginEvent extends EventMessage
      *
      * @return string
      */
-    public function getDialString()
+    public function getDialString(): string|int|bool|null
     {
         return $this->getKey('DialString');
     }

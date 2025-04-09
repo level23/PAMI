@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Whenever a ME (GSM module) changes working state, an event is generated.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -50,7 +52,7 @@ class VgsmMeStateEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -60,7 +62,7 @@ class VgsmMeStateEvent extends EventMessage
      *
      * @return string
      */
-    public function getState()
+    public function getState(): string|int|bool|null
     {
         return $this->getKey('X-vGSM-ME-State');
     }
@@ -70,7 +72,7 @@ class VgsmMeStateEvent extends EventMessage
      *
      * @return string
      */
-    public function getOldState()
+    public function getOldState(): string|int|bool|null
     {
         return $this->getKey('X-vGSM-ME-Old-State');
     }
@@ -80,7 +82,7 @@ class VgsmMeStateEvent extends EventMessage
      *
      * @return string
      */
-    public function getReason()
+    public function getReason(): string|int|bool|null
     {
         return $this->getKey('X-vGSM-ME-State-Change-Reason');
     }

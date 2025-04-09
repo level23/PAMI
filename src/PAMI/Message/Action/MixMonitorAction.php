@@ -1,4 +1,5 @@
 <?php
+
 /**
  * MixMonitor action message.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Action;
 
 /**
@@ -47,10 +49,8 @@ class MixMonitorAction extends ActionMessage
      * Sets File key.
      *
      * @param string $file File to use.
-     *
-     * @return void
      */
-    public function setFile($file)
+    public function setFile(string|int|bool $file): void
     {
         $this->setKey('File', $file);
     }
@@ -59,10 +59,8 @@ class MixMonitorAction extends ActionMessage
      * Sets Options key.
      *
      * @param string[] $options List of options to use.
-     *
-     * @return void
      */
-    public function setOptions(array $options)
+    public function setOptions(array $options): void
     {
         $this->setKey('Options', implode('', $options));
     }

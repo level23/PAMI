@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This is a generic event received from ami.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\IncomingMessage;

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when a database key is asked for.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -50,7 +52,7 @@ class DBGetResponseEvent extends EventMessage
      *
      * @return string
      */
-    public function getFamily()
+    public function getFamily(): string|int|bool|null
     {
         return $this->getKey('Family');
     }
@@ -60,7 +62,7 @@ class DBGetResponseEvent extends EventMessage
      *
      * @return string
      */
-    public function getKeyName()
+    public function getKeyName(): string|int|bool|null
     {
         return $this->getKey('Key');
     }
@@ -70,7 +72,7 @@ class DBGetResponseEvent extends EventMessage
      *
      * @return string
      */
-    public function getValue()
+    public function getValue(): string|int|bool|null
     {
         return $this->getKey('Val');
     }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when an action ShowDialPlan is issued.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 /**
@@ -48,7 +50,7 @@ class ListDialplanEvent extends EventMessage
      *
      * @return string
      */
-    public function getContext()
+    public function getContext(): string|int|bool|null
     {
         return $this->getKey('Context');
     }
@@ -58,7 +60,7 @@ class ListDialplanEvent extends EventMessage
      *
      * @return string
      */
-    public function getExtension()
+    public function getExtension(): string|int|bool|null
     {
         return $this->getKey('Extension');
     }
@@ -68,7 +70,7 @@ class ListDialplanEvent extends EventMessage
      *
      * @return string
      */
-    public function getPriority()
+    public function getPriority(): string|int|bool|null
     {
         return $this->getKey('Priority');
     }
@@ -78,7 +80,7 @@ class ListDialplanEvent extends EventMessage
      *
      * @return string
      */
-    public function getApplication()
+    public function getApplication(): string|int|bool|null
     {
         return $this->getKey('Application');
     }
@@ -88,7 +90,7 @@ class ListDialplanEvent extends EventMessage
      *
      * @return string
      */
-    public function getApplicationData()
+    public function getApplicationData(): string|int|bool|null
     {
         return $this->getKey('AppData');
     }
@@ -98,7 +100,7 @@ class ListDialplanEvent extends EventMessage
      *
      * @return string
      */
-    public function getRegistrar()
+    public function getRegistrar(): string|int|bool|null
     {
         return $this->getKey('Registrar');
     }
@@ -108,7 +110,7 @@ class ListDialplanEvent extends EventMessage
      *
      * @return string
      */
-    public function getIncludeContext()
+    public function getIncludeContext(): string|int|bool|null
     {
         return $this->getKey('IncludeContext');
     }

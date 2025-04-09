@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered for the end of the list when an action ShowDialPlan is issued.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -50,7 +52,7 @@ class ShowDialPlanCompleteEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('privilege');
     }
@@ -60,7 +62,7 @@ class ShowDialPlanCompleteEvent extends EventMessage
      *
      * @return string
      */
-    public function getListItems()
+    public function getListItems(): string|int|bool|null
     {
         return $this->getKey('listitems');
     }
@@ -70,7 +72,7 @@ class ShowDialPlanCompleteEvent extends EventMessage
      *
      * @return string
      */
-    public function getListExtensions()
+    public function getListExtensions(): string|int|bool|null
     {
         return $this->getKey('listextensions');
     }
@@ -80,7 +82,7 @@ class ShowDialPlanCompleteEvent extends EventMessage
      *
      * @return string
      */
-    public function getListPriorities()
+    public function getListPriorities(): string|int|bool|null
     {
         return $this->getKey('listpriorities');
     }
@@ -90,7 +92,7 @@ class ShowDialPlanCompleteEvent extends EventMessage
      *
      * @return string
      */
-    public function getListContexts()
+    public function getListContexts(): string|int|bool|null
     {
         return $this->getKey('listcontexts');
     }

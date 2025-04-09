@@ -1,4 +1,5 @@
 <?php
+
 /**
  * A generic outgoing message.
  *
@@ -26,6 +27,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message;
 
 /**

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered for a change in a queue member (pause/unpause).
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 /**
@@ -48,7 +50,7 @@ class QueueMemberPausedEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -58,7 +60,7 @@ class QueueMemberPausedEvent extends EventMessage
      *
      * @return string
      */
-    public function getQueue()
+    public function getQueue(): string|int|bool|null
     {
         return $this->getKey('Queue');
     }
@@ -68,7 +70,7 @@ class QueueMemberPausedEvent extends EventMessage
      *
      * @return string
      */
-    public function getLocation()
+    public function getLocation(): string|int|bool|null
     {
         return $this->getKey('Location');
     }
@@ -78,17 +80,15 @@ class QueueMemberPausedEvent extends EventMessage
      *
      * @return string
      */
-    public function getMemberName()
+    public function getMemberName(): string|int|bool|null
     {
         return $this->getKey('MemberName');
     }
 
     /**
      * Returns key: 'Paused'.
-     *
-     * @return bool
      */
-    public function getPaused()
+    public function getPaused(): bool
     {
         return intval($this->getKey('Paused')) != 0;
     }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Redirect action message.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Action;
 
 /**
@@ -47,10 +49,8 @@ class RedirectAction extends ActionMessage
      * Sets key ExtraChannel.
      *
      * @param string $channel Second call leg to transfer (optional).
-     *
-     * @return void
      */
-    public function setExtraChannel($channel)
+    public function setExtraChannel(string|int|bool $channel): void
     {
         $this->setKey('ExtraChannel', $channel);
     }
@@ -59,10 +59,8 @@ class RedirectAction extends ActionMessage
      * Sets key ExtraExten.
      *
      * @param string $extension Extension to transfer extrachannel to (optional).
-     *
-     * @return void
      */
-    public function setExtraExtension($extension)
+    public function setExtraExtension(string|int|bool $extension): void
     {
         $this->setKey('ExtraExten', $extension);
     }
@@ -71,10 +69,8 @@ class RedirectAction extends ActionMessage
      * Sets key ExtraContext.
      *
      * @param string $context Context to transfer extrachannel to (optional).
-     *
-     * @return void
      */
-    public function setExtraContext($context)
+    public function setExtraContext(string|int|bool $context): void
     {
         $this->setKey('ExtraContext', $context);
     }
@@ -83,10 +79,8 @@ class RedirectAction extends ActionMessage
      * Sets key ExtraPriority.
      *
      * @param string $priority Priority to transfer extrachannel to (optional).
-     *
-     * @return void
      */
-    public function setExtraPriority($priority)
+    public function setExtraPriority(string|int|bool $priority): void
     {
         $this->setKey('ExtraPriority', $priority);
     }

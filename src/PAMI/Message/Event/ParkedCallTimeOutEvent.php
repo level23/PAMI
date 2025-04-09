@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when a channel leaves a parking lot due to reaching the time limit of being parked.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 /**
@@ -48,7 +50,7 @@ class ParkedCallTimeOutEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -58,7 +60,7 @@ class ParkedCallTimeOutEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkeeChannel()
+    public function getParkeeChannel(): string|int|bool|null
     {
         return $this->getKey('ParkeeChannel');
     }
@@ -68,7 +70,7 @@ class ParkedCallTimeOutEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkeeChannelState()
+    public function getParkeeChannelState(): string|int|bool|null
     {
         return $this->getKey('ParkeeChannelState');
     }
@@ -78,7 +80,7 @@ class ParkedCallTimeOutEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkeeChannelStateDesc()
+    public function getParkeeChannelStateDesc(): string|int|bool|null
     {
         return $this->getKey('ParkeeChannelStateDesc');
     }
@@ -88,7 +90,7 @@ class ParkedCallTimeOutEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkeeCallerIDNum()
+    public function getParkeeCallerIDNum(): string|int|bool|null
     {
         return $this->getKey('ParkeeCallerIDNum');
     }
@@ -98,7 +100,7 @@ class ParkedCallTimeOutEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkeeCallerIDName()
+    public function getParkeeCallerIDName(): string|int|bool|null
     {
         return $this->getKey('ParkeeCallerIDName');
     }
@@ -108,7 +110,7 @@ class ParkedCallTimeOutEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkeeConnectedLineNum()
+    public function getParkeeConnectedLineNum(): string|int|bool|null
     {
         return $this->getKey('ParkeeConnectedLineNum');
     }
@@ -118,7 +120,7 @@ class ParkedCallTimeOutEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkeeConnectedLineName()
+    public function getParkeeConnectedLineName(): string|int|bool|null
     {
         return $this->getKey('ParkeeConnectedLineName');
     }
@@ -128,7 +130,7 @@ class ParkedCallTimeOutEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkeeAccountCode()
+    public function getParkeeAccountCode(): string|int|bool|null
     {
         return $this->getKey('ParkeeAccountCode');
     }
@@ -138,7 +140,7 @@ class ParkedCallTimeOutEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkeeContext()
+    public function getParkeeContext(): string|int|bool|null
     {
         return $this->getKey('ParkeeContext');
     }
@@ -148,7 +150,7 @@ class ParkedCallTimeOutEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkeeExten()
+    public function getParkeeExten(): string|int|bool|null
     {
         return $this->getKey('ParkeeExten');
     }
@@ -158,7 +160,7 @@ class ParkedCallTimeOutEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkeePriority()
+    public function getParkeePriority(): string|int|bool|null
     {
         return $this->getKey('ParkeePriority');
     }
@@ -168,7 +170,7 @@ class ParkedCallTimeOutEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkeeUniqueid()
+    public function getParkeeUniqueid(): string|int|bool|null
     {
         return $this->getKey('ParkeeUniqueid');
     }
@@ -178,7 +180,7 @@ class ParkedCallTimeOutEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkerChannel()
+    public function getParkerChannel(): string|int|bool|null
     {
         return $this->getKey('ParkerChannel');
     }
@@ -188,7 +190,7 @@ class ParkedCallTimeOutEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkerChannelState()
+    public function getParkerChannelState(): string|int|bool|null
     {
         return $this->getKey('ParkerChannelState');
     }
@@ -198,7 +200,7 @@ class ParkedCallTimeOutEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkerChannelStateDesc()
+    public function getParkerChannelStateDesc(): string|int|bool|null
     {
         return $this->getKey('ParkerChannelStateDesc');
     }
@@ -208,7 +210,7 @@ class ParkedCallTimeOutEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkerCallerIDNum()
+    public function getParkerCallerIDNum(): string|int|bool|null
     {
         return $this->getKey('ParkerCallerIDNum');
     }
@@ -218,7 +220,7 @@ class ParkedCallTimeOutEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkerCallerIDName()
+    public function getParkerCallerIDName(): string|int|bool|null
     {
         return $this->getKey('ParkerCallerIDName');
     }
@@ -228,7 +230,7 @@ class ParkedCallTimeOutEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkerConnectedLineNum()
+    public function getParkerConnectedLineNum(): string|int|bool|null
     {
         return $this->getKey('ParkerConnectedLineNum');
     }
@@ -238,7 +240,7 @@ class ParkedCallTimeOutEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkerConnectedLineName()
+    public function getParkerConnectedLineName(): string|int|bool|null
     {
         return $this->getKey('ParkerConnectedLineName');
     }
@@ -248,7 +250,7 @@ class ParkedCallTimeOutEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkerAccountCode()
+    public function getParkerAccountCode(): string|int|bool|null
     {
         return $this->getKey('ParkerAccountCode');
     }
@@ -258,7 +260,7 @@ class ParkedCallTimeOutEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkerContext()
+    public function getParkerContext(): string|int|bool|null
     {
         return $this->getKey('ParkerContext');
     }
@@ -268,7 +270,7 @@ class ParkedCallTimeOutEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkerExten()
+    public function getParkerExten(): string|int|bool|null
     {
         return $this->getKey('ParkerExten');
     }
@@ -278,7 +280,7 @@ class ParkedCallTimeOutEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkerPriority()
+    public function getParkerPriority(): string|int|bool|null
     {
         return $this->getKey('ParkerPriority');
     }
@@ -288,7 +290,7 @@ class ParkedCallTimeOutEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkerUniqueid()
+    public function getParkerUniqueid(): string|int|bool|null
     {
         return $this->getKey('ParkerUniqueid');
     }
@@ -298,7 +300,7 @@ class ParkedCallTimeOutEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkerDialString()
+    public function getParkerDialString(): string|int|bool|null
     {
         return $this->getKey('ParkerDialString');
     }
@@ -308,7 +310,7 @@ class ParkedCallTimeOutEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkinglot()
+    public function getParkinglot(): string|int|bool|null
     {
         return $this->getKey('Parkinglot');
     }
@@ -318,7 +320,7 @@ class ParkedCallTimeOutEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkingSpace()
+    public function getParkingSpace(): string|int|bool|null
     {
         return $this->getKey('ParkingSpace');
     }
@@ -328,7 +330,7 @@ class ParkedCallTimeOutEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkingTimeout()
+    public function getParkingTimeout(): string|int|bool|null
     {
         return $this->getKey('ParkingTimeout');
     }
@@ -338,7 +340,7 @@ class ParkedCallTimeOutEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkingDuration()
+    public function getParkingDuration(): string|int|bool|null
     {
         return $this->getKey('ParkingDuration');
     }

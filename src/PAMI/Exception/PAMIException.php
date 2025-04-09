@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PAMI family of exceptions.
  *
@@ -26,7 +27,10 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Exception;
+
+use Exception;
 
 /**
  * PAMI family of exceptions.
@@ -39,6 +43,6 @@ namespace PAMI\Exception;
  * @license  http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link     http://marcelog.github.com/PAMI/
  */
-class PAMIException extends \Exception
+class PAMIException extends Exception
 {
 }

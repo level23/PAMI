@@ -19,9 +19,6 @@ class Stream
     protected ?string $errorMessage = null;
 
     /**
-     * @param string        $address
-     * @param float|null    $timeout
-     * @param int           $flags
      * @param resource|null $context
      */
     public function __construct(

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when getting a dongle device.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -50,7 +52,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getDevice()
+    public function getDevice(): string|int|bool|null
     {
         return $this->getKey('Device');
     }
@@ -60,7 +62,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getAudioSetting()
+    public function getAudioSetting(): string|int|bool|null
     {
         return $this->getKey('AudioSetting');
     }
@@ -70,7 +72,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getDataSetting()
+    public function getDataSetting(): string|int|bool|null
     {
         return $this->getKey('DataSetting');
     }
@@ -80,7 +82,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getIMEISetting()
+    public function getIMEISetting(): string|int|bool|null
     {
         return $this->getKey('IMEISetting');
     }
@@ -90,7 +92,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getIMSISetting()
+    public function getIMSISetting(): string|int|bool|null
     {
         return $this->getKey('IMSISetting');
     }
@@ -100,7 +102,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannelLanguage()
+    public function getChannelLanguage(): string|int|bool|null
     {
         return $this->getKey('ChannelLanguage');
     }
@@ -110,7 +112,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getContext()
+    public function getContext(): string|int|bool|null
     {
         return $this->getKey('Context');
     }
@@ -120,7 +122,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getExten()
+    public function getExten(): string|int|bool|null
     {
         return $this->getKey('Exten');
     }
@@ -130,7 +132,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getGroup()
+    public function getGroup(): string|int|bool|null
     {
         return $this->getKey('Group');
     }
@@ -140,7 +142,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getRXGain()
+    public function getRXGain(): string|int|bool|null
     {
         return $this->getKey('RXGain');
     }
@@ -150,7 +152,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getTXGain()
+    public function getTXGain(): string|int|bool|null
     {
         return $this->getKey('TXGain');
     }
@@ -160,7 +162,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getU2DIAG()
+    public function getU2DIAG(): string|int|bool|null
     {
         return $this->getKey('U2DIAG');
     }
@@ -170,7 +172,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getUseCallingPres()
+    public function getUseCallingPres(): string|int|bool|null
     {
         return $this->getKey('UseCallingPres');
     }
@@ -180,7 +182,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getDefaultCallingPres()
+    public function getDefaultCallingPres(): string|int|bool|null
     {
         return $this->getKey('DefaultCallingPres');
     }
@@ -190,7 +192,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getAutoDeleteSMS()
+    public function getAutoDeleteSMS(): string|int|bool|null
     {
         return $this->getKey('AutoDeleteSMS');
     }
@@ -200,7 +202,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getDisableSMS()
+    public function getDisableSMS(): string|int|bool|null
     {
         return $this->getKey('DisableSMS');
     }
@@ -210,7 +212,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getResetDongle()
+    public function getResetDongle(): string|int|bool|null
     {
         return $this->getKey('ResetDongle');
     }
@@ -220,7 +222,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getSMSPDU()
+    public function getSMSPDU(): string|int|bool|null
     {
         return $this->getKey('SMSPDU');
     }
@@ -230,7 +232,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallWaitingSetting()
+    public function getCallWaitingSetting(): string|int|bool|null
     {
         return $this->getKey('CallWaitingSetting');
     }
@@ -240,7 +242,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getDTMF()
+    public function getDTMF(): string|int|bool|null
     {
         return $this->getKey('DTMF');
     }
@@ -250,7 +252,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getMinimalDTMFGap()
+    public function getMinimalDTMFGap(): string|int|bool|null
     {
         return $this->getKey('MinimalDTMFGap');
     }
@@ -260,7 +262,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getMinimalDTMFDuration()
+    public function getMinimalDTMFDuration(): string|int|bool|null
     {
         return $this->getKey('MinimalDTMFDuration');
     }
@@ -270,7 +272,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getMinimalDTMFInterval()
+    public function getMinimalDTMFInterval(): string|int|bool|null
     {
         return $this->getKey('MinimalDTMFInterval');
     }
@@ -280,7 +282,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getState()
+    public function getState(): string|int|bool|null
     {
         return $this->getKey('State');
     }
@@ -290,7 +292,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getAudioState()
+    public function getAudioState(): string|int|bool|null
     {
         return $this->getKey('AudioState');
     }
@@ -300,7 +302,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getDataState()
+    public function getDataState(): string|int|bool|null
     {
         return $this->getKey('DataState');
     }
@@ -310,7 +312,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getVoice()
+    public function getVoice(): string|int|bool|null
     {
         return $this->getKey('Voice');
     }
@@ -320,7 +322,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getSMS()
+    public function getSMS(): string|int|bool|null
     {
         return $this->getKey('SMS');
     }
@@ -330,7 +332,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getManufacturer()
+    public function getManufacturer(): string|int|bool|null
     {
         return $this->getKey('Manufacturer');
     }
@@ -340,7 +342,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getModel()
+    public function getModel(): string|int|bool|null
     {
         return $this->getKey('Model');
     }
@@ -350,7 +352,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getFirmware()
+    public function getFirmware(): string|int|bool|null
     {
         return $this->getKey('Firmware');
     }
@@ -360,7 +362,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getIMEIState()
+    public function getIMEIState(): string|int|bool|null
     {
         return $this->getKey('IMEIState');
     }
@@ -370,7 +372,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getIMSIState()
+    public function getIMSIState(): string|int|bool|null
     {
         return $this->getKey('IMSIState');
     }
@@ -380,7 +382,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getGSMRegistrationStatus()
+    public function getGSMRegistrationStatus(): string|int|bool|null
     {
         return $this->getKey('GSMRegistrationStatus');
     }
@@ -390,7 +392,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getRSSI()
+    public function getRSSI(): string|int|bool|null
     {
         return $this->getKey('RSSI');
     }
@@ -400,7 +402,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getMode()
+    public function getMode(): string|int|bool|null
     {
         return $this->getKey('Mode');
     }
@@ -410,7 +412,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getSubmode()
+    public function getSubmode(): string|int|bool|null
     {
         return $this->getKey('Submode');
     }
@@ -420,7 +422,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getProviderName()
+    public function getProviderName(): string|int|bool|null
     {
         return $this->getKey('ProviderName');
     }
@@ -430,7 +432,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getLocationAreaCode()
+    public function getLocationAreaCode(): string|int|bool|null
     {
         return $this->getKey('LocationAreaCode');
     }
@@ -440,7 +442,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getCellID()
+    public function getCellID(): string|int|bool|null
     {
         return $this->getKey('CellID');
     }
@@ -450,7 +452,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getSubscriberNumber()
+    public function getSubscriberNumber(): string|int|bool|null
     {
         return $this->getKey('SubscriberNumber');
     }
@@ -460,7 +462,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getSMSServiceCenter()
+    public function getSMSServiceCenter(): string|int|bool|null
     {
         return $this->getKey('SMSServiceCenter');
     }
@@ -470,7 +472,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getUseUCS2Encoding()
+    public function getUseUCS2Encoding(): string|int|bool|null
     {
         return $this->getKey('UseUCS2Encoding');
     }
@@ -480,7 +482,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getUSSDUse7BitEncoding()
+    public function getUSSDUse7BitEncoding(): string|int|bool|null
     {
         return $this->getKey('USSDUse7BitEncoding');
     }
@@ -490,7 +492,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getUSSDUseUCS2Decoding()
+    public function getUSSDUseUCS2Decoding(): string|int|bool|null
     {
         return $this->getKey('USSDUseUCS2Decoding');
     }
@@ -500,7 +502,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getTasksInQueue()
+    public function getTasksInQueue(): string|int|bool|null
     {
         return $this->getKey('TasksInQueue');
     }
@@ -510,7 +512,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getCommandsInQueue()
+    public function getCommandsInQueue(): string|int|bool|null
     {
         return $this->getKey('CommandsInQueue');
     }
@@ -520,7 +522,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallWaitingState()
+    public function getCallWaitingState(): string|int|bool|null
     {
         return $this->getKey('CallWaitingState');
     }
@@ -530,7 +532,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getCurrentDeviceState()
+    public function getCurrentDeviceState(): string|int|bool|null
     {
         return $this->getKey('CurrentDeviceState');
     }
@@ -540,7 +542,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getDesiredDeviceState()
+    public function getDesiredDeviceState(): string|int|bool|null
     {
         return $this->getKey('DesiredDeviceState');
     }
@@ -550,7 +552,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallsChannels()
+    public function getCallsChannels(): string|int|bool|null
     {
         return $this->getKey('CallsChannels');
     }
@@ -560,7 +562,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getActive()
+    public function getActive(): string|int|bool|null
     {
         return $this->getKey('Active');
     }
@@ -570,7 +572,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getHeld()
+    public function getHeld(): string|int|bool|null
     {
         return $this->getKey('Held');
     }
@@ -580,7 +582,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getDialing()
+    public function getDialing(): string|int|bool|null
     {
         return $this->getKey('Dialing');
     }
@@ -590,7 +592,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getAlerting()
+    public function getAlerting(): string|int|bool|null
     {
         return $this->getKey('Alerting');
     }
@@ -600,7 +602,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getIncoming()
+    public function getIncoming(): string|int|bool|null
     {
         return $this->getKey('Incoming');
     }
@@ -610,7 +612,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getWaiting()
+    public function getWaiting(): string|int|bool|null
     {
         return $this->getKey('Waiting');
     }
@@ -620,7 +622,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getReleasing()
+    public function getReleasing(): string|int|bool|null
     {
         return $this->getKey('Releasing');
     }
@@ -630,7 +632,7 @@ class DongleDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getInitializing()
+    public function getInitializing(): string|int|bool|null
     {
         return $this->getKey('Initializing');
     }

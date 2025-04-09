@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when a caller joins a Queue.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 /**
@@ -48,7 +50,7 @@ class QueueCallerJoinEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -58,7 +60,7 @@ class QueueCallerJoinEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannel()
+    public function getChannel(): string|int|bool|null
     {
         return $this->getKey('Channel');
     }
@@ -68,7 +70,7 @@ class QueueCallerJoinEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannelState()
+    public function getChannelState(): string|int|bool|null
     {
         return $this->getKey('ChannelState');
     }
@@ -78,7 +80,7 @@ class QueueCallerJoinEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannelStateDesc()
+    public function getChannelStateDesc(): string|int|bool|null
     {
         return $this->getKey('ChannelStateDesc');
     }
@@ -88,7 +90,7 @@ class QueueCallerJoinEvent extends EventMessage
      *
      * @return string
      */
-    public function getCount()
+    public function getCount(): string|int|bool|null
     {
         return $this->getKey('Count');
     }
@@ -98,7 +100,7 @@ class QueueCallerJoinEvent extends EventMessage
      *
      * @return string
      */
-    public function getQueue()
+    public function getQueue(): string|int|bool|null
     {
         return $this->getKey('Queue');
     }
@@ -108,7 +110,7 @@ class QueueCallerJoinEvent extends EventMessage
      *
      * @return string
      */
-    public function getPosition()
+    public function getPosition(): string|int|bool|null
     {
         return $this->getKey('Position');
     }
@@ -118,7 +120,7 @@ class QueueCallerJoinEvent extends EventMessage
      *
      * @return string
      */
-    public function getUniqueID()
+    public function getUniqueID(): string|int|bool|null
     {
         return $this->getKey('UniqueID');
     }
@@ -128,7 +130,7 @@ class QueueCallerJoinEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerIdNum()
+    public function getCallerIdNum(): string|int|bool|null
     {
         return $this->getKey('CallerIdNum');
     }
@@ -138,7 +140,7 @@ class QueueCallerJoinEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerIdName()
+    public function getCallerIdName(): string|int|bool|null
     {
         return $this->getKey('CallerIdName');
     }
@@ -148,7 +150,7 @@ class QueueCallerJoinEvent extends EventMessage
      *
      * @return string
      */
-    public function getConnectedLineNum()
+    public function getConnectedLineNum(): string|int|bool|null
     {
         return $this->getKey('ConnectedLineNum');
     }
@@ -158,7 +160,7 @@ class QueueCallerJoinEvent extends EventMessage
      *
      * @return string
      */
-    public function getConnectedLineName()
+    public function getConnectedLineName(): string|int|bool|null
     {
         return $this->getKey('ConnectedLineName');
     }
@@ -168,7 +170,7 @@ class QueueCallerJoinEvent extends EventMessage
      *
      * @return string
      */
-    public function getExten()
+    public function getExten(): string|int|bool|null
     {
         return $this->getKey('Exten');
     }
@@ -178,7 +180,7 @@ class QueueCallerJoinEvent extends EventMessage
      *
      * @return string
      */
-    public function getContext()
+    public function getContext(): string|int|bool|null
     {
         return $this->getKey('Context');
     }
@@ -188,7 +190,7 @@ class QueueCallerJoinEvent extends EventMessage
      *
      * @return string
      */
-    public function getAccountCode()
+    public function getAccountCode(): string|int|bool|null
     {
         return $this->getKey('AccountCode');
     }
@@ -198,7 +200,7 @@ class QueueCallerJoinEvent extends EventMessage
      *
      * @return string
      */
-    public function getPriority()
+    public function getPriority(): string|int|bool|null
     {
         return $this->getKey('Priority');
     }

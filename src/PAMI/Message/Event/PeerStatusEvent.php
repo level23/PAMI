@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when a peer changes its status.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -50,7 +52,7 @@ class PeerStatusEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -60,7 +62,7 @@ class PeerStatusEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannelType()
+    public function getChannelType(): string|int|bool|null
     {
         return $this->getKey('ChannelType');
     }
@@ -70,7 +72,7 @@ class PeerStatusEvent extends EventMessage
      *
      * @return string
      */
-    public function getPeer()
+    public function getPeer(): string|int|bool|null
     {
         return $this->getKey('Peer');
     }
@@ -80,7 +82,7 @@ class PeerStatusEvent extends EventMessage
      *
      * @return string
      */
-    public function getPeerStatus()
+    public function getPeerStatus(): string|int|bool|null
     {
         return $this->getKey('PeerStatus');
     }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Unpauses the Monitor for a given channel.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Action;
 
 /**

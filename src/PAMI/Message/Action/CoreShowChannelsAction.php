@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Show channels.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Action;
 
 /**

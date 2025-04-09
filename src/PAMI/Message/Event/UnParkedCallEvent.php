@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when a call is unparked.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 /**
@@ -48,7 +50,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -58,7 +60,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkinglot()
+    public function getParkinglot(): string|int|bool|null
     {
         return $this->getKey('Parkinglot');
     }
@@ -69,7 +71,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getFrom()
+    public function getFrom(): int|bool|string|null
     {
         return $this->getRetrieverChannel();
     }
@@ -80,7 +82,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getTimeout()
+    public function getTimeout(): int|bool|string|null
     {
         return $this->getParkingTimeout();
     }
@@ -91,7 +93,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getConnectedLineNum()
+    public function getConnectedLineNum(): int|bool|string|null
     {
         return $this->getParkeeConnectedLineNum();
     }
@@ -102,7 +104,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getConnectedLineName()
+    public function getConnectedLineName(): int|bool|string|null
     {
         return $this->getParkeeConnectedLineName();
     }
@@ -113,7 +115,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannel()
+    public function getChannel(): int|bool|string|null
     {
         return $this->getParkeeChannel();
     }
@@ -124,7 +126,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerIDNum()
+    public function getCallerIDNum(): int|bool|string|null
     {
         return $this->getParkeeCallerIDNum();
     }
@@ -135,7 +137,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerIDName()
+    public function getCallerIDName(): int|bool|string|null
     {
         return $this->getParkeeCallerIDName();
     }
@@ -146,7 +148,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getUniqueID()
+    public function getUniqueID(): int|bool|string|null
     {
         return $this->getParkeeUniqueid();
     }
@@ -157,7 +159,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getExtension()
+    public function getExtension(): int|bool|string|null
     {
         return $this->getParkingSpace();
     }
@@ -167,7 +169,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkeeChannel()
+    public function getParkeeChannel(): int|bool|string|null
     {
         return $this->getKey('ParkeeChannel') ?: $this->getKey('Channel');
     }
@@ -177,7 +179,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkeeChannelState()
+    public function getParkeeChannelState(): string|int|bool|null
     {
         return $this->getKey('ParkeeChannelState');
     }
@@ -187,7 +189,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkeeChannelStateDesc()
+    public function getParkeeChannelStateDesc(): string|int|bool|null
     {
         return $this->getKey('ParkeeChannelStateDesc');
     }
@@ -197,7 +199,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkeeCallerIDNum()
+    public function getParkeeCallerIDNum(): int|bool|string|null
     {
         return $this->getKey('ParkeeCallerIDNum') ?: $this->getKey('CallerIDNum');
     }
@@ -207,7 +209,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkeeCallerIDName()
+    public function getParkeeCallerIDName(): int|bool|string|null
     {
         return $this->getKey('ParkeeCallerIDName') ?: $this->getKey('CallerIDName');
     }
@@ -217,7 +219,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkeeConnectedLineNum()
+    public function getParkeeConnectedLineNum(): int|bool|string|null
     {
         return $this->getKey('ParkeeConnectedLineNum') ?: $this->getKey('ConnectedLineNum');
     }
@@ -227,7 +229,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkeeConnectedLineName()
+    public function getParkeeConnectedLineName(): int|bool|string|null
     {
         return $this->getKey('ParkeeConnectedLineName') ?: $this->getKey('ConnectedLineName');
     }
@@ -237,7 +239,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkeeAccountCode()
+    public function getParkeeAccountCode(): string|int|bool|null
     {
         return $this->getKey('ParkeeAccountCode');
     }
@@ -247,7 +249,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkeeContext()
+    public function getParkeeContext(): string|int|bool|null
     {
         return $this->getKey('ParkeeContext');
     }
@@ -257,7 +259,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkeeExten()
+    public function getParkeeExten(): string|int|bool|null
     {
         return $this->getKey('ParkeeExten');
     }
@@ -267,7 +269,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkeePriority()
+    public function getParkeePriority(): string|int|bool|null
     {
         return $this->getKey('ParkeePriority');
     }
@@ -277,7 +279,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkeeUniqueid()
+    public function getParkeeUniqueid(): int|bool|string|null
     {
         return $this->getKey('ParkeeUniqueid') ?: $this->getKey('UniqueId');
     }
@@ -287,7 +289,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkerDialString()
+    public function getParkerDialString(): string|int|bool|null
     {
         return $this->getKey('ParkerDialString');
     }
@@ -297,7 +299,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkingSpace()
+    public function getParkingSpace(): int|bool|string|null
     {
         return $this->getKey('ParkingSpace') ?: $this->getKey('Exten');
     }
@@ -307,7 +309,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkingTimeout()
+    public function getParkingTimeout(): int|bool|string|null
     {
         return $this->getKey('ParkingTimeout') ?: $this->getKey('Timeout');
     }
@@ -317,7 +319,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkingDuration()
+    public function getParkingDuration(): string|int|bool|null
     {
         return $this->getKey('ParkingDuration');
     }
@@ -327,7 +329,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkerChannel()
+    public function getParkerChannel(): string|int|bool|null
     {
         return $this->getKey('ParkerChannel');
     }
@@ -337,7 +339,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkerChannelState()
+    public function getParkerChannelState(): string|int|bool|null
     {
         return $this->getKey('ParkerChannelState');
     }
@@ -347,7 +349,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkerChannelStateDesc()
+    public function getParkerChannelStateDesc(): string|int|bool|null
     {
         return $this->getKey('ParkerChannelStateDesc');
     }
@@ -357,7 +359,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkerCallerIDNum()
+    public function getParkerCallerIDNum(): string|int|bool|null
     {
         return $this->getKey('ParkerCallerIDNum');
     }
@@ -367,7 +369,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkerCallerIDName()
+    public function getParkerCallerIDName(): string|int|bool|null
     {
         return $this->getKey('ParkerCallerIDName');
     }
@@ -377,7 +379,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkerConnectedLineNum()
+    public function getParkerConnectedLineNum(): string|int|bool|null
     {
         return $this->getKey('ParkerConnectedLineNum');
     }
@@ -387,7 +389,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkerConnectedLineName()
+    public function getParkerConnectedLineName(): string|int|bool|null
     {
         return $this->getKey('ParkerConnectedLineName');
     }
@@ -397,7 +399,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkerAccountCode()
+    public function getParkerAccountCode(): string|int|bool|null
     {
         return $this->getKey('ParkerAccountCode');
     }
@@ -407,7 +409,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkerContext()
+    public function getParkerContext(): string|int|bool|null
     {
         return $this->getKey('ParkerContext');
     }
@@ -417,7 +419,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkerExten()
+    public function getParkerExten(): string|int|bool|null
     {
         return $this->getKey('ParkerExten');
     }
@@ -427,7 +429,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkerPriority()
+    public function getParkerPriority(): string|int|bool|null
     {
         return $this->getKey('ParkerPriority');
     }
@@ -437,7 +439,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkerUniqueid()
+    public function getParkerUniqueid(): string|int|bool|null
     {
         return $this->getKey('ParkerUniqueid');
     }
@@ -447,7 +449,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getRetrieverChannel()
+    public function getRetrieverChannel(): int|bool|string|null
     {
         return $this->getKey('RetrieverChannel') ?: $this->getKey('From');
     }
@@ -457,7 +459,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getRetrieverChannelState()
+    public function getRetrieverChannelState(): string|int|bool|null
     {
         return $this->getKey('RetrieverChannelState');
     }
@@ -467,7 +469,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getRetrieverChannelStateDesc()
+    public function getRetrieverChannelStateDesc(): string|int|bool|null
     {
         return $this->getKey('RetrieverChannelStateDesc');
     }
@@ -477,7 +479,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getRetrieverCallerIDNum()
+    public function getRetrieverCallerIDNum(): string|int|bool|null
     {
         return $this->getKey('RetrieverCallerIDNum');
     }
@@ -487,7 +489,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getRetrieverCallerIDName()
+    public function getRetrieverCallerIDName(): string|int|bool|null
     {
         return $this->getKey('RetrieverCallerIDName');
     }
@@ -497,7 +499,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getRetrieverConnectedLineNum()
+    public function getRetrieverConnectedLineNum(): string|int|bool|null
     {
         return $this->getKey('RetrieverConnectedLineNum');
     }
@@ -507,7 +509,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getRetrieverConnectedLineName()
+    public function getRetrieverConnectedLineName(): string|int|bool|null
     {
         return $this->getKey('RetrieverConnectedLineName');
     }
@@ -517,7 +519,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getRetrieverAccountCode()
+    public function getRetrieverAccountCode(): string|int|bool|null
     {
         return $this->getKey('RetrieverAccountCode');
     }
@@ -527,7 +529,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getRetrieverContext()
+    public function getRetrieverContext(): string|int|bool|null
     {
         return $this->getKey('RetrieverContext');
     }
@@ -537,7 +539,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getRetrieverExten()
+    public function getRetrieverExten(): string|int|bool|null
     {
         return $this->getKey('RetrieverExten');
     }
@@ -547,7 +549,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getRetrieverPriority()
+    public function getRetrieverPriority(): string|int|bool|null
     {
         return $this->getKey('RetrieverPriority');
     }
@@ -557,7 +559,7 @@ class UnParkedCallEvent extends EventMessage
      *
      * @return string
      */
-    public function getRetrieverUniqueid()
+    public function getRetrieverUniqueid(): string|int|bool|null
     {
         return $this->getKey('RetrieverUniqueid');
     }

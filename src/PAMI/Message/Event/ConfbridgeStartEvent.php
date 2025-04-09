@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when a confbridge is created.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 /**
@@ -48,7 +50,7 @@ class ConfbridgeStartEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -58,7 +60,7 @@ class ConfbridgeStartEvent extends EventMessage
      *
      * @return string
      */
-    public function getConference()
+    public function getConference(): string|int|bool|null
     {
         return $this->getKey('Conference');
     }
@@ -68,7 +70,7 @@ class ConfbridgeStartEvent extends EventMessage
      *
      * @return string
      */
-    public function getBridgeUniqueid()
+    public function getBridgeUniqueid(): string|int|bool|null
     {
         return $this->getKey('BridgeUniqueid');
     }
@@ -78,7 +80,7 @@ class ConfbridgeStartEvent extends EventMessage
      *
      * @return string
      */
-    public function getBridgeType()
+    public function getBridgeType(): string|int|bool|null
     {
         return $this->getKey('BridgeType');
     }
@@ -88,7 +90,7 @@ class ConfbridgeStartEvent extends EventMessage
      *
      * @return string
      */
-    public function getBridgeTechnology()
+    public function getBridgeTechnology(): string|int|bool|null
     {
         return $this->getKey('BridgeTechnology');
     }
@@ -98,7 +100,7 @@ class ConfbridgeStartEvent extends EventMessage
      *
      * @return string
      */
-    public function getBridgeCreator()
+    public function getBridgeCreator(): string|int|bool|null
     {
         return $this->getKey('BridgeCreator');
     }
@@ -108,7 +110,7 @@ class ConfbridgeStartEvent extends EventMessage
      *
      * @return string
      */
-    public function getBridgeName()
+    public function getBridgeName(): string|int|bool|null
     {
         return $this->getKey('BridgeName');
     }
@@ -118,7 +120,7 @@ class ConfbridgeStartEvent extends EventMessage
      *
      * @return string
      */
-    public function getBridgeNumChannels()
+    public function getBridgeNumChannels(): string|int|bool|null
     {
         return $this->getKey('BridgeNumChannels');
     }

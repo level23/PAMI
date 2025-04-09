@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when ..?
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -50,7 +52,7 @@ class MessageWaitingEvent extends EventMessage
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getPrivilege(): string|int|bool|null
     {
         return $this->getKey('Privilege');
     }
@@ -60,7 +62,7 @@ class MessageWaitingEvent extends EventMessage
      *
      * @return string
      */
-    public function getMailbox()
+    public function getMailbox(): string|int|bool|null
     {
         return $this->getKey('Mailbox');
     }
@@ -70,7 +72,7 @@ class MessageWaitingEvent extends EventMessage
      *
      * @return string
      */
-    public function getWaiting()
+    public function getWaiting(): string|int|bool|null
     {
         return $this->getKey('Waiting');
     }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered for the end of the list when an action Sipshowregistry
  * is issued.
@@ -28,6 +29,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 use PAMI\Message\Event\EventMessage;
@@ -52,7 +54,7 @@ class RegistrationsCompleteEvent extends EventMessage
      *
      * @return string
      */
-    public function getListItems()
+    public function getListItems(): string|int|bool|null
     {
         return $this->getKey('ListItems');
     }

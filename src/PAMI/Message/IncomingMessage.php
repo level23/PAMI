@@ -1,4 +1,5 @@
 <?php
+
 /**
  * A generic incoming message.
  *
@@ -43,13 +44,6 @@ namespace PAMI\Message;
 abstract class IncomingMessage extends Message
 {
     /**
-     * Holds original message.
-     *
-     * @var string
-     */
-    protected string $rawContent;
-
-    /**
      * Metadata. Specific channel variables.
      *
      * @var array<string,string[]>
@@ -72,8 +66,6 @@ abstract class IncomingMessage extends Message
     /**
      * Returns key 'EventList'. In responses, this will surely be a "start". In
      * events, should be a "complete".
-     *
-     * @return string
      */
     public function getEventList(): string
     {
@@ -82,8 +74,6 @@ abstract class IncomingMessage extends Message
 
     /**
      * Returns the original message content without parsing.
-     *
-     * @return string
      */
     public function getRawContent(): string
     {
@@ -112,7 +102,7 @@ abstract class IncomingMessage extends Message
      *
      * @return array<string,mixed>|null
      */
-    public function getChannelVariables(string $channel = null): ?array
+    public function getChannelVariables(?string $channel = null): ?array
     {
         if (is_null($channel)) {
             if (!isset($this->keys['channel'])) {
@@ -137,13 +127,14 @@ abstract class IncomingMessage extends Message
      *
      * @return void
      */
-    public function __construct(string $rawContent)
-    {
+    public function __construct(/**
+     * Holds original message.
+     */
+        protected string $rawContent
+    ) {
         parent::__construct();
         $this->channelVariables = ['default' => []];
-
-        $this->rawContent = $rawContent;
-        $lines                  = explode(Message::EOL, $rawContent);
+        $lines                  = explode(Message::EOL, $this->rawContent);
 
         foreach ($lines as $line) {
             $content = explode(':', $line);

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Event triggered when an action ConfbridgeList is issued.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Event;
 
 /**
@@ -48,7 +50,7 @@ class ConfbridgeListEvent extends EventMessage
      *
      * @return string
      */
-    public function getConference()
+    public function getConference(): string|int|bool|null
     {
         return $this->getKey('Conference');
     }
@@ -58,7 +60,7 @@ class ConfbridgeListEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannel()
+    public function getChannel(): string|int|bool|null
     {
         return $this->getKey('Channel');
     }
@@ -68,7 +70,7 @@ class ConfbridgeListEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerIDNum()
+    public function getCallerIDNum(): string|int|bool|null
     {
         return $this->getKey('CallerIDNum');
     }
@@ -78,7 +80,7 @@ class ConfbridgeListEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerIDName()
+    public function getCallerIDName(): string|int|bool|null
     {
         return $this->getKey('CallerIDName');
     }
@@ -88,7 +90,7 @@ class ConfbridgeListEvent extends EventMessage
      *
      * @return string
      */
-    public function getMarkedUser()
+    public function getMarkedUser(): string|int|bool|null
     {
         return $this->getKey('MarkedUser');
     }
@@ -98,7 +100,7 @@ class ConfbridgeListEvent extends EventMessage
      *
      * @return string
      */
-    public function getWaitMarked()
+    public function getWaitMarked(): string|int|bool|null
     {
         return $this->getKey('WaitMarked');
     }
@@ -108,7 +110,7 @@ class ConfbridgeListEvent extends EventMessage
      *
      * @return string
      */
-    public function getEndMarked()
+    public function getEndMarked(): string|int|bool|null
     {
         return $this->getKey('EndMarked');
     }
@@ -118,7 +120,7 @@ class ConfbridgeListEvent extends EventMessage
      *
      * @return string
      */
-    public function getWaiting()
+    public function getWaiting(): string|int|bool|null
     {
         return $this->getKey('Waiting');
     }
@@ -128,7 +130,7 @@ class ConfbridgeListEvent extends EventMessage
      *
      * @return string
      */
-    public function getMuted()
+    public function getMuted(): string|int|bool|null
     {
         return $this->getKey('Muted');
     }
@@ -138,7 +140,7 @@ class ConfbridgeListEvent extends EventMessage
      *
      * @return string
      */
-    public function getAnsweredTime()
+    public function getAnsweredTime(): string|int|bool|null
     {
         return $this->getKey('AnsweredTime');
     }
@@ -148,7 +150,7 @@ class ConfbridgeListEvent extends EventMessage
      *
      * @return string
      */
-    public function getAdmin()
+    public function getAdmin(): string|int|bool|null
     {
         return $this->getKey('Admin');
     }

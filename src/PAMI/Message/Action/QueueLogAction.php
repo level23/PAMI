@@ -1,4 +1,5 @@
 <?php
+
 /**
  * QueueLog action message.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Action;
 
 /**
@@ -47,10 +49,8 @@ class QueueLogAction extends ActionMessage
      * Sets penalty. Key: 'UniqueId'.
      *
      * @param string $uniqueId Unique Id.
-     *
-     * @return void
      */
-    public function setUniqueId($uniqueId)
+    public function setUniqueId(string|int|bool $uniqueId): void
     {
         $this->setKey('UniqueId', $uniqueId);
     }
@@ -59,10 +59,8 @@ class QueueLogAction extends ActionMessage
      * Sets member name. Key: 'Interface'.
      *
      * @param string $interface Interface.
-     *
-     * @return void
      */
-    public function setMemberName($interface)
+    public function setMemberName(string|int|bool $interface): void
     {
         $this->setKey('Interface', $interface);
     }
@@ -72,10 +70,8 @@ class QueueLogAction extends ActionMessage
      * Sets paused. Key: 'Message'.
      *
      * @param string $message Message.
-     *
-     * @return void
      */
-    public function setMessage($message)
+    public function setMessage(string|int|bool $message): void
     {
         $this->setKey('Message', $message);
     }

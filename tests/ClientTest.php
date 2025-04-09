@@ -2,6 +2,7 @@
 
 namespace Tests;
 
+use ErrorException;
 use Mockery;
 use PAMI\Stream\Stream;
 use PAMI\Client\IClient;
@@ -50,7 +51,7 @@ class ClientTest extends MockeryTestCase
 
     /**
      * @return array{0: ClientImpl|MockInterface|LegacyMockInterface, 1: Stream|MockInterface|LegacyMockInterface}
-     * @throws \PAMI\Client\Exception\ClientException
+     * @throws ClientException
      */
     protected function makeClientAndStream(): array
     {
@@ -128,16 +129,17 @@ class ClientTest extends MockeryTestCase
 
     public function testCanConnectTimeout(): void
     {
-        $this->expectException(\ErrorException::class);
+        $this->expectException(ErrorException::class);
         $this->expectExceptionMessage('timed out');
 
         set_error_handler(
-        /**
-         * @throws \ErrorException
-         */
-            function (int $errno, string $errstr, string $errfile, int $errline) {
-                throw new \ErrorException($errstr, $errno, 1, $errfile, $errline);
-            });
+            /**
+             * @throws \ErrorException
+             */
+            function (int $errno, string $errstr, string $errfile, int $errline): void {
+                throw new ErrorException($errstr, $errno, 1, $errfile, $errline);
+            }
+        );
 
         $options = [
             'host'         => '2.3.4.5',
@@ -192,13 +194,13 @@ class ClientTest extends MockeryTestCase
     }
 
     /**
-     * @throws \PAMI\Client\Exception\ClientException
+     * @throws ClientException
      */
     public function testCanRegisterEventListener(): void
     {
         [$client, $stream] = $this->makeClientAndStream();
 
-        $client->registerEventListener(new SomeListenerClass);
+        $client->registerEventListener(new SomeListenerClass());
 
         $events = [
             implode("\r\n", [
@@ -223,14 +225,14 @@ class ClientTest extends MockeryTestCase
     }
 
     /**
-     * @throws \PAMI\Client\Exception\ClientException
+     * @throws ClientException
      */
     public function testCanRegisterClosureEventListener(): void
     {
         [$client, $stream] = $this->makeClientAndStream();
 
         $resultVariable = false;
-        $client->registerEventListener(function ($event) use (&$resultVariable) {
+        $client->registerEventListener(function ($event) use (&$resultVariable): void {
             $resultVariable = $event;
         });
 
@@ -255,14 +257,14 @@ class ClientTest extends MockeryTestCase
     }
 
     /**
-     * @throws \PAMI\Client\Exception\ClientException
+     * @throws ClientException
      */
     public function testCanRegisterMethodEventListener(): void
     {
         [$client, $stream] = $this->makeClientAndStream();
 
-        $listener = new SomeListenerClass;
-        $client->registerEventListener([$listener, 'handle']);
+        $listener = new SomeListenerClass();
+        $client->registerEventListener($listener->handle(...));
         $events = [
             implode("\r\n", [
                 'Event: PeerStatus',
@@ -285,13 +287,13 @@ class ClientTest extends MockeryTestCase
     }
 
     /**
-     * @throws \PAMI\Client\Exception\ClientException
+     * @throws ClientException
      */
     public function testCanUnregisterEventListener(): void
     {
         [$client, $stream] = $this->makeClientAndStream();
 
-        $id = $client->registerEventListener(new SomeListenerClass);
+        $id = $client->registerEventListener(new SomeListenerClass());
 
         $client->unregisterEventListener($id);
 
@@ -316,7 +318,7 @@ class ClientTest extends MockeryTestCase
     }
 
     /**
-     * @throws \PAMI\Client\Exception\ClientException
+     * @throws ClientException
      */
     public function testCanFilterWithPredicate(): void
     {
@@ -324,12 +326,10 @@ class ClientTest extends MockeryTestCase
 
         $resultVariable = false;
         $client->registerEventListener(
-            function ($event) use (&$resultVariable) {
+            function ($event) use (&$resultVariable): void {
                 $resultVariable = $event;
             },
-            function () {
-                return false;
-            }
+            fn (): false => false
         );
 
         $events = [
@@ -353,7 +353,7 @@ class ClientTest extends MockeryTestCase
     }
 
     /**
-     * @throws \PAMI\Client\Exception\ClientException
+     * @throws ClientException
      */
     public function testCanLogin(): void
     {
@@ -505,7 +505,7 @@ class ClientTest extends MockeryTestCase
     }
 
     /**
-     * @throws \PAMI\Client\Exception\ClientException
+     * @throws ClientException
      */
     public function testCanGetResponseWithAssociatedEvents(): void
     {
@@ -547,7 +547,8 @@ class ClientTest extends MockeryTestCase
         $this->assertCount(1, $events);
         $this->assertTrue($events[0] instanceof CoreShowChannelsCompleteEvent);
         $this->assertEquals(
-            $events[0]->getRawContent(), implode("\r\n", [
+            $events[0]->getRawContent(),
+            implode("\r\n", [
                 'Event: CoreShowChannelsComplete',
                 'EventList: Complete',
                 'ListItems: 0',
@@ -557,15 +558,15 @@ class ClientTest extends MockeryTestCase
     }
 
     /**
-     * @throws \PAMI\Client\Exception\ClientException
+     * @throws ClientException
      */
     public function testCanSerializeResponseAndEvents(): void
     {
         [$client, $stream] = $this->makeClientAndStream();
 
-        $client->registerEventListener(new SomeListenerClass);
+        $client->registerEventListener(new SomeListenerClass());
 
-        $action = new CoreShowChannelsAction;
+        $action = new CoreShowChannelsAction();
         $write  =
             "action: CoreShowChannels\r\n" .
             "actionid: " . $this->microTime . "\r\n" .
@@ -609,13 +610,13 @@ class ClientTest extends MockeryTestCase
     }
 
     /**
-     * @throws \PAMI\Client\Exception\ClientException
+     * @throws ClientException
      */
     public function testCanGetResponseEventsWithoutActionidAndEvent(): void
     {
         [$client, $stream] = $this->makeClientAndStream();
 
-        $client->registerEventListener(new SomeListenerClass);
+        $client->registerEventListener(new SomeListenerClass());
 
         $event = [
             "Response: Success\r\n",
@@ -645,7 +646,7 @@ class ClientTest extends MockeryTestCase
 
         $stream->shouldReceive('read')->andReturn(...$event);
 
-        $action = new CoreShowChannelsAction;
+        $action = new CoreShowChannelsAction();
 
         $this->assertEquals($write, $action->serialize());
 
@@ -688,13 +689,13 @@ class ClientTest extends MockeryTestCase
     }
 
     /**
-     * @throws \PAMI\Client\Exception\ClientException
+     * @throws ClientException
      */
     public function testCanReportUnknownEvent(): void
     {
         [$client, $stream] = $this->makeClientAndStream();
 
-        $client->registerEventListener(new SomeListenerClass);
+        $client->registerEventListener(new SomeListenerClass());
 
         $event = [
             "Event: MyOwnImaginaryEvent\r\n",
@@ -717,13 +718,13 @@ class ClientTest extends MockeryTestCase
      * ChanVariable is sent without a channel name and without a "channel"
      * key.
      * https://github.com/marcelog/PAMI/issues/85
-     * @throws \PAMI\Client\Exception\ClientException
+     * @throws ClientException
      */
     public function testCanGetChannelVariablesWithoutDefaultChannelName(): void
     {
         [$client, $stream] = $this->makeClientAndStream();
 
-        $client->registerEventListener(new SomeListenerClass);
+        $client->registerEventListener(new SomeListenerClass());
 
         $event = [
             "Event: Dial\r\n",
@@ -765,13 +766,13 @@ class ClientTest extends MockeryTestCase
      * @group channel_vars
      * ChanVariable is sent without a channel name but with a "channel" key.
      * https://github.com/marcelog/PAMI/issues/85
-     * @throws \PAMI\Client\Exception\ClientException
+     * @throws ClientException
      */
     public function testCanGetChannelVariablesWithDefaultChannelName(): void
     {
         [$client, $stream] = $this->makeClientAndStream();
 
-        $client->registerEventListener(new SomeListenerClass);
+        $client->registerEventListener(new SomeListenerClass());
 
         $event = [
             "Event: Dial\r\n",
@@ -818,13 +819,13 @@ class ClientTest extends MockeryTestCase
      * @group channel_vars
      * ChanVariable is sent with a channel name and with a "channel" key.
      * https://github.com/marcelog/PAMI/issues/85
-     * @throws \PAMI\Client\Exception\ClientException
+     * @throws ClientException
      */
     public function testCanGetChannelVariables(): void
     {
         [$client, $stream] = $this->makeClientAndStream();
 
-        $client->registerEventListener(new SomeListenerClass);
+        $client->registerEventListener(new SomeListenerClass());
 
         $event = [
             "Event: Dial\r\n",
@@ -877,5 +878,3 @@ class ClientTest extends MockeryTestCase
         $this->assertEquals($channelVars, $event->getAllChannelVariables());
     }
 }
-
-

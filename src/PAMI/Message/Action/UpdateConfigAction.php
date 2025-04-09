@@ -1,4 +1,5 @@
 <?php
+
 /**
  * UpdateConfig action message.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Action;
 
 /**
@@ -43,10 +45,7 @@ namespace PAMI\Message\Action;
  */
 class UpdateConfigAction extends ActionMessage
 {
-    /**
-     * @var int
-     */
-    protected static $counter = -1;
+    protected static int $counter;
 
     /**
      * Constructor.
@@ -63,10 +62,8 @@ class UpdateConfigAction extends ActionMessage
      * Sets Src filename key.
      *
      * @param string $filename.
-     *
-     * @return void
      */
-    public function setSrcFilename($filename)
+    public function setSrcFilename(string|int|bool $filename): void
     {
         $this->setKey('SrcFilename', $filename);
     }
@@ -75,10 +72,8 @@ class UpdateConfigAction extends ActionMessage
      * Sets Dst Filename key.
      *
      * @param string $filename.
-     *
-     * @return void
      */
-    public function setDstFilename($filename)
+    public function setDstFilename(string|int|bool $filename): void
     {
         $this->setKey('DstFilename', $filename);
     }
@@ -87,10 +82,8 @@ class UpdateConfigAction extends ActionMessage
      * Sets Reload key.
      *
      * @param bool $reload
-     *
-     * @return void
      */
-    public function setReload($reload)
+    public function setReload($reload): void
     {
         $this->setKey('Reload', $reload ? 'yes' : 'no');
     }
@@ -99,11 +92,8 @@ class UpdateConfigAction extends ActionMessage
      * Sets Action-XXXXXX key.
      *
      * @param string $input.
-     *
-     * @return void
      */
-
-    public function setAction($input)
+    public function setAction(string|int|bool $input): void
     {
         UpdateConfigAction::$counter++;
         $this->setKey('Action-'.$this->getPaddedCounter(), $input);
@@ -113,10 +103,8 @@ class UpdateConfigAction extends ActionMessage
      * Sets Cat-XXXXXX key.
      *
      * @param string|int $input
-     *
-     * @return void
      */
-    public function setCat($input)
+    public function setCat(string|int|bool $input): void
     {
         $this->setKey('Cat-'.$this->getPaddedCounter(), $input);
     }
@@ -125,10 +113,8 @@ class UpdateConfigAction extends ActionMessage
      * Sets Var-XXXXXX key.
      *
      * @param string $input.
-     *
-     * @return void
      */
-    public function setVar($input)
+    public function setVar(string|int|bool $input): void
     {
         $this->setKey('Var-'.$this->getPaddedCounter(), $input);
     }
@@ -137,44 +123,36 @@ class UpdateConfigAction extends ActionMessage
      * Sets Value-XXXXXX key.
      *
      * @param string $input.
-     *
-     * @return void
      */
-    public function setValue($input)
+    public function setValue(string|int|bool $input): void
     {
         $this->setKey('Value-'.$this->getPaddedCounter(), $input);
     }
 
-     /**
+    /**
      * Sets Match-XXXXXX key.
      *
      * @param string $input.
-     *
-     * @return void
      */
-    public function setMatch($input)
+    public function setMatch(string|int|bool $input): void
     {
         $this->setKey('Match-'.$this->getPaddedCounter(), $input);
     }
 
-     /**
+    /**
      * Sets Line-XXXXXX key.
      *
      * @param string $input.
-     *
-     * @return void
      */
-    public function setLine($input)
+    public function setLine(string|int|bool $input): void
     {
         $this->setKey('Line-'.$this->getPaddedCounter(), $input);
     }
 
     /**
      * Returns the string representation for counter with leading zeroes in UpdateConfig action format.
-     *
-     * @return string
      */
-    protected function getPaddedCounter()
+    protected function getPaddedCounter(): string
     {
         return str_pad((string)UpdateConfigAction::$counter, 6, '0', STR_PAD_LEFT);
     }

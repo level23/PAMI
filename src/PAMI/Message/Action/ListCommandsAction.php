@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Lists avaiable manager actions.
  *
@@ -27,6 +28,7 @@
  * limitations under the License.
  *
  */
+
 namespace PAMI\Message\Action;
 
 /**
